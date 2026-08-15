@@ -1,0 +1,800 @@
+[
+  {
+    "sheet": "Sheet1",
+    "row": 0,
+    "name": "NANOLYTE D-3  NANO SHOT",
+    "composition": "CHOLECALCIFEROL 60000IU"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 1,
+    "name": "NANOLYTE D3 DROPS",
+    "composition": "CHOLECALCIFEROL 800IU"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 2,
+    "name": "DEFZIX-6 TAB",
+    "composition": "DEFLAZOCORT 6mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 3,
+    "name": "EFARAC    moisturizer creem",
+    "composition": "Refined sunflower oil ,sodium pyrrolidane carboxylic acid and sodium lactate creem"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 4,
+    "name": "DYDROLYTE TAB",
+    "composition": "DYDROGESTERONE 10MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 5,
+    "name": "FEROCAN SYR",
+    "composition": "IRON(FERRIC PYROPHOSPHATE)+VITAMIN B12+FOLIC ACID"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 7,
+    "name": "SUCLAR O SYR",
+    "composition": "SUCRALFATE 1GM+OXETACAINE 20MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 8,
+    "name": "SUCLAR  SYR",
+    "composition": "SUCRALFATE 1GM+OXETACAINE 20MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 9,
+    "name": "FIXBONE CQ TAB",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 10,
+    "name": "BROMOTRIX-R TAB",
+    "composition": "TRYPSIN 48MG+BROMELAIN 90MG+RUTOSIDE TRIHYDRATE 100MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 11,
+    "name": "BIO-CQ TAB",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 12,
+    "name": "BIOMMUNE SYR",
+    "composition": "Lysine Monohydrochloride 250 mg + L-Glutamic Acid 100 mg + Vitamin A Palmitate 12500 IU + Vitamin D3 1000 IU + Vitamin E Acetate 25 IU + Vitamin B1 7.5 mg + Vitamin B2 7.5 mg + Vitamin B6 5 mg + Vitamin B12 5 mcg + D-Panthenol 12 mg + Niacinamide 75 mg + Folic Acid 1500 mcg + Zinc Sulphate 170 mg + Cupric Sulphate 1000 mcg Syrup (per 10 ml)."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 13,
+    "name": "CARTIFLEX TAB",
+    "composition": "Calcium Carbonate 600 mg + Undenatured  CollagenType II (UC-II) 40 mg + Glucosamine 100 mg + Chondroitin 30 mg + Rosehip Extract 40 mg + Sodium Hyaluronate 40 mg + Magnesium 30 mg + Zinc 7.5 mg + Manganese 1.8 mg + Copper 0.5 mg Tablets."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 14,
+    "name": "BIOMMUNE CAPSULE",
+    "composition": "LYCOPENE 6000MCG+BETA CAROTENE 10MG+ZINC SULPHATE MONOHYDRATE 7.5MG+ZINC 7.5MG+VITAMIN-E 15IU+VITAMIN-C 40MG+L-GLUTAMIC ACID 25MG+SODIUM SELENATE 40MCG+SELENIUM40MCG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 15,
+    "name": "CARTIMOVE TAB",
+    "composition": "L-Arginine 300 mg + Collagen Peptide Type II 40 mg + Sodium Hyaluronate 30 mg + Chondroitin Sulphate 200 mg + Vitamin C 35 mg + Rosehip Extract 375 mg + Vitamin D3 600 IU Tablets."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 16,
+    "name": "BIOFLEX TAB",
+    "composition": "Collagen Peptide (Type I, II, III, IX, X & XII Blend) 300 mg + Boswellia serrata 50 mg + Ginger Extract 100 mg + Curcumin 95% 100 mg + Vitamin E 60 mg + Ascorbic Acid (Vitamin C) 40 mg + Sodium Hyaluronate 30 mg + Vitamin D3 400 IU."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 17,
+    "name": "BIO-Q 300 CAPSULE",
+    "composition": "LIPOSOMAL CO-ENZYME Q-10 300MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 18,
+    "name": "BIO-GC4 TAB",
+    "composition": "Glucosamine Sulphate 250 mg + Chondroitin Sulphate 200 mg + Collagen Peptide 150 mg + Curcumin (NLT 90%) 100 mg + L-Proline 100 mg + L-Lysine Hydrochloride 100 mg + L-Glutamine 50 mg + Vitamin C 35 mg + Quercetin 25 mg + Iron 10 mg + Zinc Sulphate 10 mg + Bambusa vulgaris 7.5 mg + Niacinamide 5 mg + Vitamin B6 (Pyridoxine) 1.4 mg + Manganese Sulphate 1 mg + Vitamin B12 (Cyanocobalamin) 1 mcg Tablets."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 19,
+    "name": "BIOMMUNE DROPS",
+    "composition": "Vitamin A Palmitate 1150 IU + Vitamin D3 400 IU + Vitamin E 2.5 IU + Vitamin B1 0.2 mg + Vitamin B2 0.3 mg + Vitamin B6 0.3 mg + Niacinamide 3.6 mg + D-Panthenol 1 mg + Ascorbic Acid 25 mg + Zinc Sulphate 3 mg + Iodine 20 mcg + Chromium 10 mcg + Manganese 1 mg + Molybdenum 20 mcg + Selenium 10 mcg + L-Lysine Hydrochloride 10 mg + Flax Seed Oil 3 mg + Choline 25 mcg + Biotin 20 mcg + DHA 5 mg Syrup (per 5 ml)."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 21,
+    "name": "CHYMOLYTE FORTE",
+    "composition": "trypsin chymotrypsin"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 22,
+    "name": "ROSUGAURD-10 TAB",
+    "composition": "ROSUVASTATIN CALCIUM 10MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 23,
+    "name": "BIONAC-P TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 24,
+    "name": "PRESITA-100 TAB",
+    "composition": "SITAGLIPTIN 100MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 25,
+    "name": "BIONAC-TP-8 TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 8MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 26,
+    "name": "NAPRO-D TAB",
+    "composition": "NAPROXEN SODIUM 500MG+DOMPERIDONE MALEATE 10MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 27,
+    "name": "BIONAC-TP4 TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 4MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 28,
+    "name": "FLUPIRAC-P TAB",
+    "composition": "FLUPIRTINE MALEATE 100MG+PARACETAMOL 325MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 29,
+    "name": "RABEFAST-DSR CAPSULE",
+    "composition": "RABEPRAZOLE SODIUM 20MG+DOMPERIDONE 30MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 30,
+    "name": "BIOFENAC-TC TAB",
+    "composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Trypsin Chymotrypsin (150000AU)"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 31,
+    "name": "IROTEX-XT",
+    "composition": "FERROUS ASCORBATE 100MG+FOLIC ACID 1.5MG+ZINC SULPHATE MONOHYDRATE 22.5MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 32,
+    "name": "ZYMIVIS SYR",
+    "composition": "DIGESTIVE ENZYME SYR"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 33,
+    "name": "TELMONEX 40",
+    "composition": "telmisartan 40 MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 34,
+    "name": "TELMONEX AM",
+    "composition": "telmisartan 40 MG + amlodipine 5MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 35,
+    "name": "TELMONEX H",
+    "composition": "telmisartan 40MG  hydrochlorothiazide 12.5 MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 36,
+    "name": "TELMONEX AH TAB",
+    "composition": "Telmisartan 40 MG Amlodipine 5MG  Hydrochlorothiazide 12.5 MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 37,
+    "name": "THIALYTE TAB",
+    "composition": "thiamine 100mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 38,
+    "name": "SETOTIX PT 300 MG TAB",
+    "composition": "s etodolac 300 MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 39,
+    "name": "GABATRIX NT",
+    "composition": "gabapentin 400 MG and nortriptyline 10 MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 40,
+    "name": "PRESITA 100/500",
+    "composition": "sitagliptin 100 mg metformin 500MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 41,
+    "name": "FURLYTE-S TAB",
+    "composition": "furosemide 40mg spironolactone 50mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 42,
+    "name": "MECOLYTE GOLD INJ",
+    "composition": "Methylcobalamin 1500MCG, Thiamine HCl 100MG , Pyridoxine HCl 100MG , Nicotinamide 100MG , D-Panthenol 50MG  Injection"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 43,
+    "name": "TORSPIRO 10/50",
+    "composition": "torsemide 10MG spironolactone 50MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 44,
+    "name": "LIZO 600 MG TAB",
+    "composition": "linezolid 600 mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 45,
+    "name": "BIONAC SP",
+    "composition": "acecloAceclofenac 100 MG +paracetamol 325MG  +serratiopeptidasE 15MG"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 46,
+    "name": "THIO Q GEL",
+    "composition": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Thiocolchicoside IP 0.125% w/w + Virgin Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w Gel."
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 47,
+    "name": "R PAC GEL",
+    "composition": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w + Benzyl Alcohol IP 1% w/w Gel"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 48,
+    "name": "PANTORAC INJ",
+    "composition": "pantoprazole injection"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 49,
+    "name": "THIO Q 4 INJ",
+    "composition": "thiocolchicoside 4 MG INJ"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 50,
+    "name": "BIO Q MAX 300",
+    "composition": "coenzyme q10 300mg Lcarnitine 500mg omega 3  Lycopene"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 51,
+    "name": "LACTUL 200 ML",
+    "composition": "lactulose solution"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 52,
+    "name": "PROLYTIX  DHA POWDER",
+    "composition": "dha protein powder with dry fruits flavour"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 53,
+    "name": "CEFUBAX CV 625",
+    "composition": "cefuroxime axetil and potassium clavulanate"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 54,
+    "name": "CEFURO SB 2.25",
+    "composition": "CEFUROXIME-1500mg & SULBACTAM- 750mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 55,
+    "name": "COVITIX Q10MG TAB",
+    "composition": "L-Arginine 100 mg + Coenzyme Q10 100 mg + L-Carnitine 50 mg + Alpha Lipoic Acid 50 mg + Omega-3 50 mg + Zinc (as Zinc Sulphate Monohydrate) 12 mg + Astaxanthin 10% 8 mg + Piperine 5 mg + Pyridoxine Hydrochloride 2 mg + Lycopene 6% 5000 mcg + Chromium (as Chromium Picolinate) 160 mcg + Selenium (as Sodium Selenate) 40 mcg + Folic Acid 118 mcg + Vitamin B12 1 mcg + Vitamin D3 400 IU + Tocopheryl Acetate 15 IU"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 56,
+    "name": "ESOFAST DSR",
+    "composition": "Esomeprazole Magnesium Trihydrate IP + Domperidone IP 30 mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 57,
+    "name": "DAPALYTE 10MG",
+    "composition": "dapagliflozin 10 mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 58,
+    "name": "CALZON ADVANCE  Sachet",
+    "composition": "Calcium Aspartate 500 mg + Collagen Peptide 5 g + Cissus quadrangularis 500 mg + Magnesium Oxide 55 mg + Vitamin C 40 mg + Pyridoxal-5-Phosphate 1.5 mg + Zinc 1.5 mg + Vitamin B12 2.2 mcg + L-Methylfolate 300 mcg + Vitamin K2-7 45 mcg + Vitamin D3 600 IU Sachet"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 59,
+    "name": "argilyte plus",
+    "composition": "L-Arginine 3 g + Lycopene 4 mg + DHA 200 mg + Proanthocyanidins 75 mg + L-Methylfolate 12.5 mg + Zinc 5 mg Sachet (10 g)"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 60,
+    "name": "CHYMORE DS",
+    "composition": "Trypsin Chymotrypsin (200000AU)"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 61,
+    "name": "EPILYTE-T",
+    "composition": "Eplerenone 25  + Torsemide 10"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 62,
+    "name": "MYOSPER",
+    "composition": "Eperisone 50 mg + Aceclofenac 100 mg"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 63,
+    "name": "AMILYTE 500INJ",
+    "composition": "amikacin 500 mg injection"
+  },
+  {
+    "sheet": "Sheet1",
+    "row": 64,
+    "name": "BIOVITOL  (multivitamin multimineral with antioxidant)",
+    "composition": "Lycopene 6% – 2 mg + Vitamin A (Acetate) – 600 mcg + Vitamin B1 (Thiamine) – 1.4 mg + Vitamin B2 (Riboflavin) – 1.5 mg + Vitamin B3 (Niacinamide) – 18 mg + Vitamin B5 (Pantothenic Acid) – 5 mg + Vitamin B6 (Pyridoxine) – 2 mg + Vitamin B12 (Cyanocobalamin) – 1 mcg + Vitamin C (Ascorbic Acid) – 40 mg + Vitamin E (Acetate) – 5 mg + Zinc Sulphate – 12 mg + Manganese Chloride – 2 mg + Copper (as Cupric Sulphate) – 900 mcg + Selenium (as Sodium Selenate) – 30 mcg."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 0,
+    "name": "BIOMMUNE CAPSULE",
+    "composition": "LYCOPENE 6000MCG+BETA CAROTENE 10MG+ZINC SULPHATE MONOHYDRATE 7.5MG+ZINC 7.5MG+VITAMIN-E 15IU+VITAMIN-C 40MG+L-GLUTAMIC ACID 25MG+SODIUM SELENATE 40MCG+SELENIUM40MCG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 1,
+    "name": "BIOMMUNE SYR",
+    "composition": "Lysine Monohydrochloride 250 mg + L-Glutamic Acid 100 mg + Vitamin A Palmitate 12500 IU + Vitamin D3 1000 IU + Vitamin E Acetate 25 IU + Vitamin B1 7.5 mg + Vitamin B2 7.5 mg + Vitamin B6 5 mg + Vitamin B12 5 mcg + D-Panthenol 12 mg + Niacinamide 75 mg + Folic Acid 1500 mcg + Zinc Sulphate 170 mg + Cupric Sulphate 1000 mcg Syrup (per 10 ml)."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 2,
+    "name": "BIOMMUNE DROPS",
+    "composition": "Vitamin A Palmitate 1150 IU + Vitamin D3 400 IU + Vitamin E 2.5 IU + Vitamin B1 0.2 mg + Vitamin B2 0.3 mg + Vitamin B6 0.3 mg + Niacinamide 3.6 mg + D-Panthenol 1 mg + Ascorbic Acid 25 mg + Zinc Sulphate 3 mg + Iodine 20 mcg + Chromium 10 mcg + Manganese 1 mg + Molybdenum 20 mcg + Selenium 10 mcg + L-Lysine Hydrochloride 10 mg + Flax Seed Oil 3 mg + Choline 25 mcg + Biotin 20 mcg + DHA 5 mg Syrup (per 5 ml)."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 3,
+    "name": "BIOVITOL  Z",
+    "composition": "multivitamin multimineral with antioxidan"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 4,
+    "name": "MECOLYTE GOLD INJ",
+    "composition": "Methylcobalamin 1500MCG, Thiamine HCl 100MG , Pyridoxine HCl 100MG , Nicotinamide 100MG , D-Panthenol 50MG  Injection"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 5,
+    "name": "BIONAC-P TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 6,
+    "name": "BIONAC SP",
+    "composition": "acecloAceclofenac 100 MG +paracetamol 325MG  +serratiopeptidasE 15MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 7,
+    "name": "BIONAC-TP-8 TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 8MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 8,
+    "name": "BIONAC-TP4 TAB",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 4MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 9,
+    "name": "BIOFENAC-TC TAB",
+    "composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Trypsin Chymotrypsin (150000AU)"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 10,
+    "name": "SETOTIX PT 300 MG TAB",
+    "composition": "s etodolac 300 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 11,
+    "name": "MYOSPER",
+    "composition": "Eperisone 50 mg + Aceclofenac 100 mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 12,
+    "name": "FLUPIRAC-P TAB",
+    "composition": "FLUPIRTINE MALEATE 100MG+PARACETAMOL 325MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 13,
+    "name": "NAPRO-D TAB",
+    "composition": "NAPROXEN SODIUM 500MG+DOMPERIDONE  10MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 14,
+    "name": "BROMOTRIX-R TAB",
+    "composition": "TRYPSIN 48MG+BROMELAIN 90MG+RUTOSIDE TRIHYDRATE 100MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 15,
+    "name": "CHYMOLYTE FORTE",
+    "composition": "Trypsin chymotrypsin"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 16,
+    "name": "CHYMORE DS",
+    "composition": "Trypsin Chymotrypsin (200000AU)"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 17,
+    "name": "FIXBONE CQ TAB",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 18,
+    "name": "BIO-CQ TAB",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 19,
+    "name": "CARTIMOVE TAB",
+    "composition": "L-Arginine 300 mg + Collagen Peptide Type II 40 mg + Sodium Hyaluronate 30 mg + Chondroitin Sulphate 200 mg + Vitamin C 35 mg + Rosehip Extract 375 mg + Vitamin D3 600 IU Tablets."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 20,
+    "name": "BIOFLEX C2+",
+    "composition": "Glucosamine Hydrochloride 1500 mg + Boswellia Serrata Extract 250 mg + Chondroitin Sulphate 100 mg + Rosehip Extract 100 mg + Curcumin 80 mg + Sodium Hyaluronate 40 mg + Collagen Peptides Type II 40 mg + Black Pepper (Piper nigrum) Extract 5 mg + Boron 150 mcg + Vitamin B12 2.2 mcg."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 21,
+    "name": "BIO-GC4 TAB",
+    "composition": "Glucosamine Sulphate 250 mg + Chondroitin Sulphate 200 mg + Collagen Peptide 150 mg + Curcumin (NLT 90%) 100 mg + L-Proline 100 mg + L-Lysine Hydrochloride 100 mg + L-Glutamine 50 mg + Vitamin C 35 mg + Quercetin 25 mg + Iron 10 mg + Zinc Sulphate 10 mg + Bambusa vulgaris 7.5 mg + Niacinamide 5 mg + Vitamin B6 (Pyridoxine) 1.4 mg + Manganese Sulphate 1 mg + Vitamin B12 (Cyanocobalamin) 1 mcg Tablets."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 22,
+    "name": "THIO Q GEL",
+    "composition": "Thiocolchicoside IP 0.125% w/w+Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w)  + Virgin Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w Gel."
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 23,
+    "name": "THIO Q 4 INJ",
+    "composition": "Thiocolchicoside 4 MG INJ"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 24,
+    "name": "R PAC GEL",
+    "composition": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w + Benzyl Alcohol IP 1% w/w Gel"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 25,
+    "name": "CALZON ADVANCE  Sachet",
+    "composition": "Calcium Aspartate 500 mg + Collagen Peptide 5 g + Cissus quadrangularis 500 mg + Magnesium Oxide 55 mg + Vitamin C 40 mg + Pyridoxal-5-Phosphate 1.5 mg + Zinc 1.5 mg + Vitamin B12 2.2 mcg + L-Methylfolate 300 mcg + Vitamin K2-7 45 mcg + Vitamin D3 600 IU Sachet"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 26,
+    "name": "GABATRIX NT",
+    "composition": "Gabapentin 400 MG and nortriptyline 10 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 27,
+    "name": "NANOLYTE D-3  NANO SHOT",
+    "composition": "CHOLECALCIFEROL 60000IU"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 28,
+    "name": "NANOLYTE D3 DROPS",
+    "composition": "CHOLECALCIFEROL 800IU"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 29,
+    "name": "DEFZIX-6 TAB",
+    "composition": "DEFLAZOCORT 6mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 30,
+    "name": "ESOFAST DSR",
+    "composition": "Esomeprazole Magnesium Trihydrate IP + Domperidone IP 30 mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 31,
+    "name": "RABEFAST-DSR CAPSULE",
+    "composition": "RABEPRAZOLE SODIUM 20MG+DOMPERIDONE 30MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 32,
+    "name": "RABEFAST-LSR 40  TAB",
+    "composition": "RABEPRAZOLE SODIUM 40MG + Levosulpiride 75 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 33,
+    "name": "PANTORAC INJ",
+    "composition": "Pantoprazole injection"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 34,
+    "name": "SUCLAR O SYR",
+    "composition": "SUCRALFATE 1GM+OXETACAINE 20MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 35,
+    "name": "SUCLAR  SYR",
+    "composition": "SUCRALFATE 1GM"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 36,
+    "name": "LACTUL 200 ML",
+    "composition": "Lactulose solution"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 37,
+    "name": "LIZO 600 MG TAB",
+    "composition": "Linezolid 600 mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 38,
+    "name": "CEFUBAX CV 625",
+    "composition": "cefuroxime axetil and potassium clavulanate"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 39,
+    "name": "CEFURO SB 2.25",
+    "composition": "CEFUROXIME-1500mg & SULBACTAM- 750mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 40,
+    "name": "AMILYTE 500INJ",
+    "composition": "amikacin 500 mg injection"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 41,
+    "name": "B3 MAX",
+    "composition": "Omega-3 fish oil 600    DHA 300MG  EPA 60MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 42,
+    "name": "BIO Q MAX 300",
+    "composition": "coenzyme q10 300mg  Lcarnitine 500mg  omega 3   Lycopene"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 43,
+    "name": "BIO-Q 300 CAPSULE",
+    "composition": "LIPOSOMAL CO-ENZYME Q-10 300MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 44,
+    "name": "DYDROLYTE TAB",
+    "composition": "DYDROGESTERONE 10MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 45,
+    "name": "COVITIX Q10MG TAB",
+    "composition": "L-Arginine 100 mg + Coenzyme Q10 100 mg + L-Carnitine 50 mg + Alpha Lipoic Acid 50 mg + Omega-3 50 mg + Zinc (as Zinc Sulphate Monohydrate) 12 mg + Astaxanthin 10% 8 mg + Piperine 5 mg + Pyridoxine Hydrochloride 2 mg + Lycopene 6% 5000 mcg + Chromium (as Chromium Picolinate) 160 mcg + Selenium (as Sodium Selenate) 40 mcg + Folic Acid 118 mcg + Vitamin B12 1 mcg + Vitamin D3 400 IU + Tocopheryl Acetate 15 IU"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 46,
+    "name": "Argilyte plus",
+    "composition": "L-Arginine 3 g + Lycopene 4 mg + DHA 200 mg + Proanthocyanidins 75 mg + L-Methylfolate 12.5 mg + Zinc 5 mg Sachet (10 g)"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 47,
+    "name": "PROLYTIX  DHA POWDER",
+    "composition": "Dha protein powder with dry fruits flavour"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 48,
+    "name": "IROTEX-XT",
+    "composition": "FERROUS ASCORBATE 100MG+FOLIC ACID 1.5MG+ZINC SULPHATE MONOHYDRATE 22.5MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 49,
+    "name": "FEROCAN SYR",
+    "composition": "IRON(FERRIC PYROPHOSPHATE)+VITAMIN B12+FOLIC ACID"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 50,
+    "name": "ZYMIVIS SYR",
+    "composition": "DIGESTIVE ENZYME SYR"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 51,
+    "name": "ROSUGAURD-10 TAB",
+    "composition": "ROSUVASTATIN CALCIUM 10MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 52,
+    "name": "PRESITA-100 TAB",
+    "composition": "SITAGLIPTIN 100MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 53,
+    "name": "TELMONEX 40",
+    "composition": "Telmisartan 40 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 54,
+    "name": "TELMONEX AM",
+    "composition": "Telmisartan 40 MG + amlodipine 5MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 55,
+    "name": "TELMONEX H",
+    "composition": "Telmisartan 40MG  Hydrochlorothiazide 12.5 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 56,
+    "name": "TELMONEX AH TAB",
+    "composition": "Telmisartan 40 MG Amlodipine 5MG  Hydrochlorothiazide 12.5 MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 57,
+    "name": "THIALYTE TAB",
+    "composition": "Thiamine 100mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 58,
+    "name": "PRESITA 100/500",
+    "composition": "Sitagliptin 100 mg Metformin 500MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 59,
+    "name": "FURLYTE-S TAB",
+    "composition": "Furosemide 40mg  Spironolactone 50mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 60,
+    "name": "TORSPIRO 10/50",
+    "composition": "Torsemide 10MG Spironolactone 50MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 61,
+    "name": "DAPALYTE 10MG",
+    "composition": "Dapagliflozin 10 mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 62,
+    "name": "EPILYTE-T",
+    "composition": "Eplerenone 25  + Torsemide 10"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 63,
+    "name": "ATORA CV 10",
+    "composition": "Atorvastatin 10 + Clopidogrel 75"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 64,
+    "name": "EFARAC    moisturizer creem",
+    "composition": "Refined sunflower oil ,sodium pyrrolidane carboxylic acid and sodium lactate creem"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 65,
+    "name": "ITRAX 200MG",
+    "composition": "Itraconazole"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 66,
+    "name": "HYDRORAC INJ",
+    "composition": "hydrocortisone 1000MG"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 67,
+    "name": "T BACTUM-1.5 INJ",
+    "composition": "cefoperazone 1000MG and sulbactam 500MG injection"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 68,
+    "name": "GLOW LYTE TAB",
+    "composition": "L-Glutathione 500 mg + Alpha Lipoic Acid 100 mg + Pine Bark Extract 50 mg + Grape Seed Extract 50 mg + Co-Enzyme Q10 50 mg + Vitamin C 40 mg"
+  },
+  {
+    "sheet": "Sheet2",
+    "row": 69,
+    "name": "GLOW LYTE SOAP",
+    "composition": "Glutathione, Arbutin, Almond Oil, Kesar, Kojic Acid, Vitamin C & Vitamin E."
+  }
+]

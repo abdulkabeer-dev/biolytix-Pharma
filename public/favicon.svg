@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="white"/>
+  <!-- Blue B letterform -->
+  <text x="6" y="46" font-family="Georgia, serif" font-size="52" font-weight="bold" font-style="italic" fill="#1a7fc1">B</text>
+  <!-- Swoosh wave under the B -->
+  <path d="M4 52 Q16 46 28 49 Q38 52 46 47" stroke="#3daee9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M3 56 Q15 50 27 53 Q37 56 45 51" stroke="#00b4d8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>

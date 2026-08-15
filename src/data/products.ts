@@ -1,0 +1,2391 @@
+// Real Biolytix Pharmaceuticals Product Catalogue
+// Generated from BIOLYTIX.xlsx
+
+export interface Ingredient {
+  name: string
+  strength: string
+}
+
+export type DosageForm = 'Tablet' | 'Capsule' | 'Syrup' | 'Suspension' | 'Injection' | 'Drops' | 'Cream' | 'Oral Solution' | 'Powder' | 'Gel' | 'Ointment'
+
+export interface DivisionBannerSlide {
+  eyebrow: string
+  title: string
+  body: string
+  stat: string
+  art: 'shield' | 'thermo' | 'flask' | 'wind' | 'leaf' | 'heart' | 'tube' | 'eye' | 'sparkles'
+  tint: string
+}
+
+export interface Division {
+  id: string
+  name: string
+  shortLabel: string
+  icon: string
+  tagline?: string
+  description?: string
+  accentColor?: string
+  heroImage?: string
+  stat?: string
+  banners?: DivisionBannerSlide[]
+}
+
+export interface Medicine {
+  id: string
+  name: string
+  genericName?: string
+  divisionId: string
+  form: DosageForm
+  pack: string
+  composition: string
+  indication: string
+  ingredients: Ingredient[]
+  schedule?: 'Rx' | 'OTC' | string
+  isFeatured?: boolean
+  featured?: boolean
+  isNew?: boolean
+  storage?: string
+}
+
+export const divisions: Division[] = [
+  {
+    "id": "anti-infectives",
+    "name": "Anti-Infectives & Antibiotics",
+    "shortLabel": "Anti-Infectives",
+    "icon": "ShieldPlus",
+    "tagline": "Defeating resistant pathogens with precision antimicrobial formulations.",
+    "description": "High-efficacy cephalosporins, penicillins, macrolides, fluoroquinolones, and combination antimicrobials manufactured under sterile, WHO-GMP conditions.",
+    "accentColor": "#1a7fc1",
+    "heroImage": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1200&q=80",
+    "stat": "99.8% Potency Rate",
+    "banners": [
+      {
+        "eyebrow": "Precision Antimicrobials",
+        "title": "High-Purity Broad-Spectrum Antibiotics",
+        "body": "Targeted formulations engineered for fast bactericidal action and minimal resistance emergence across critical clinical infections.",
+        "stat": "WHO-GMP Compliant",
+        "art": "shield",
+        "tint": "from-sky-900 to-blue-950"
+      },
+      {
+        "eyebrow": "Sterile Manufacturing",
+        "title": "Microbial Barrier & Quality Assurance",
+        "body": "Every batch subjected to multi-stage sterility validation, HPLC assay testing, and temperature-monitored distribution.",
+        "stat": "Zero-Contamination Standard",
+        "art": "flask",
+        "tint": "from-blue-900 to-cyan-950"
+      }
+    ]
+  },
+  {
+    "id": "analgesics",
+    "name": "Analgesics & Anti-Inflammatory",
+    "shortLabel": "Analgesics",
+    "icon": "Thermometer",
+    "tagline": "Targeted pain relief and inflammation control for active lives.",
+    "description": "NSAIDs, muscle relaxant combinations, proteolytic enzymes, and antipyretic formulations designed for fast onset and superior gastric tolerance.",
+    "accentColor": "#f97316",
+    "heroImage": "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=80",
+    "stat": "Fast-Acting Formulations",
+    "banners": [
+      {
+        "eyebrow": "Advanced Pain Care",
+        "title": "Fast-Acting Anti-Inflammatory Therapeutics",
+        "body": "Dual and triple-action NSAID and enzyme formulations delivering rapid analgesia and anti-edematous resolution for musculoskeletal trauma.",
+        "stat": "Rapid Tissue Penetration",
+        "art": "thermo",
+        "tint": "from-amber-900 to-orange-950"
+      },
+      {
+        "eyebrow": "Spasm & Mobility Relief",
+        "title": "Muscle Relaxants & Proteolytic Combinations",
+        "body": "Synergistic muscle relaxant and systemic enzyme preparations promoting faster mobility restoration and tissue healing.",
+        "stat": "Enhanced Patient Comfort",
+        "art": "shield",
+        "tint": "from-orange-900 to-red-950"
+      }
+    ]
+  },
+  {
+    "id": "gastro",
+    "name": "Gastro-Intestinal & Hepatoprotective",
+    "shortLabel": "Gastrointestinal",
+    "icon": "FlaskConical",
+    "tagline": "Restoring digestive harmony through advanced mucosal and acid control.",
+    "description": "Proton pump inhibitors, prokinetics, mucosal protectants, antacids, digestive enzymes, and hepatoprotective formulations.",
+    "accentColor": "#10b981",
+    "heroImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+    "stat": "High Bioavailability",
+    "banners": [
+      {
+        "eyebrow": "Acid & Mucosal Protection",
+        "title": "Sustained Gastro-Protection & Ulcer Healing",
+        "body": "Next-generation proton pump inhibitors, sucralfate combinations, and prokinetics ensuring rapid mucosal re-epithelialization.",
+        "stat": "24-Hour Acid Suppression",
+        "art": "flask",
+        "tint": "from-emerald-900 to-teal-950"
+      },
+      {
+        "eyebrow": "Digestive Enzymes",
+        "title": "Complete Gastrointestinal Comfort & Absorption",
+        "body": "Enzyme syrups and digestive balancing therapeutics formulated for optimal nutritional bioavailability and dyspepsia relief.",
+        "stat": "Multi-Enzyme Synergy",
+        "art": "leaf",
+        "tint": "from-teal-900 to-green-950"
+      }
+    ]
+  },
+  {
+    "id": "cardiac",
+    "name": "Cardiac Care & Diabetic Support",
+    "shortLabel": "Cardiac & Diabetic",
+    "icon": "HeartPulse",
+    "tagline": "Guarding cardiovascular vitality and glycemic balance.",
+    "description": "Antihypertensives, lipid-lowering statins, oral anti-diabetic agents, diuretics, and cardiovascular combination therapies.",
+    "accentColor": "#f43f5e",
+    "heroImage": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200&q=80",
+    "stat": "Precision Dosing",
+    "banners": [
+      {
+        "eyebrow": "Cardiovascular Defense",
+        "title": "Comprehensive Blood Pressure & Lipid Management",
+        "body": "Clinically proven ARBs, CCBs, statins, and diuretic combinations formulated for 24-hour hemodynamic stability and vascular protection.",
+        "stat": "24-Hour Hemodynamic Control",
+        "art": "heart",
+        "tint": "from-rose-900 to-red-950"
+      },
+      {
+        "eyebrow": "Glycemic Regulation",
+        "title": "Targeted Type-2 Diabetes Care Formulations",
+        "body": "DPP-4 inhibitors and biguanide combinations designed for smooth glycemic stabilization and reduced hypoglycemic risk.",
+        "stat": "End-Organ Protection",
+        "art": "shield",
+        "tint": "from-red-900 to-pink-950"
+      }
+    ]
+  },
+  {
+    "id": "multivitamins",
+    "name": "Multivitamins & Nutraceuticals",
+    "shortLabel": "Nutraceuticals",
+    "icon": "Leaf",
+    "tagline": "Sustaining holistic cellular nutrition and immune resilience.",
+    "description": "Therapeutic multivitamins, essential mineral complexes, amino acids, antioxidants, collagen peptides, bone-health CQ supplements, and hematinics.",
+    "accentColor": "#22c55e",
+    "heroImage": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=1200&q=80",
+    "stat": "Complete Nutrient Profiles",
+    "banners": [
+      {
+        "eyebrow": "Cellular Vitality & Immunity",
+        "title": "Antioxidants, Minerals & Therapeutic Multivitamins",
+        "body": "Formulations with lycopene, zinc, vitamin complexes, and amino acids designed to reinforce immune defense and cellular vitality.",
+        "stat": "High Cellular Bioavailability",
+        "art": "leaf",
+        "tint": "from-green-900 to-emerald-950"
+      },
+      {
+        "eyebrow": "Bone & Cartilage Health",
+        "title": "Collagen Peptides, Cissus & Vitamin D3 Regimens",
+        "body": "Specialized bone mineralization, osteogenic stimulation, and cartilage repair complexes for active joint longevity.",
+        "stat": "Synergistic Mineralization",
+        "art": "shield",
+        "tint": "from-teal-900 to-emerald-950"
+      }
+    ]
+  },
+  {
+    "id": "respiratory",
+    "name": "Respiratory & Anti-Allergic",
+    "shortLabel": "Respiratory",
+    "icon": "Wind",
+    "tagline": "Clear airways and rapid allergy defense for unobstructed breathing.",
+    "description": "Bronchodilators, mucolytics, expectorants, corticosteroids, and anti-histaminic syrups, suspensions, and tablets.",
+    "accentColor": "#0ea5e9",
+    "heroImage": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=1200&q=80",
+    "stat": "Clean Formulations",
+    "banners": [
+      {
+        "eyebrow": "Bronchial & Allergy Care",
+        "title": "Rapid Airway Clearance & Anti-Histaminic Defense",
+        "body": "Specialized anti-allergic, anti-inflammatory, and bronchodilating formulations providing immediate breathing comfort.",
+        "stat": "Fast-Acting Relief",
+        "art": "wind",
+        "tint": "from-cyan-900 to-sky-950"
+      },
+      {
+        "eyebrow": "Anti-Inflammatory Steroid Care",
+        "title": "Precision Corticosteroid Therapy",
+        "body": "Deflazocort and second-generation anti-allergics engineered with enhanced therapeutic safety profiles.",
+        "stat": "High Safety Margin",
+        "art": "shield",
+        "tint": "from-sky-900 to-blue-950"
+      }
+    ]
+  },
+  {
+    "id": "derma",
+    "name": "Dermatology & Topical Care",
+    "shortLabel": "Dermatology",
+    "icon": "Sparkles",
+    "tagline": "Restoring dermal integrity with advanced topical therapeutics.",
+    "description": "Topical emollients, antifungal creams, anti-inflammatory ointments, soothing moisturizers, and barrier restoration preparations.",
+    "accentColor": "#a855f7",
+    "heroImage": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80",
+    "stat": "Dermatologist Tested",
+    "banners": [
+      {
+        "eyebrow": "Barrier Restoration",
+        "title": "Advanced Emollient & Dermal Care Formulations",
+        "body": "Physiological lipid replenishment, soothing moisturizers, and barrier protective formulations for healthy dermal recovery.",
+        "stat": "Non-Greasy Rapid Absorption",
+        "art": "tube",
+        "tint": "from-purple-900 to-violet-950"
+      },
+      {
+        "eyebrow": "Targeted Topical Therapy",
+        "title": "Antifungal & Anti-Inflammatory Dermatology",
+        "body": "Precision topical creams and ointments delivering localized active penetration for stubborn dermatological conditions.",
+        "stat": "Clinically Proven Efficacy",
+        "art": "sparkles",
+        "tint": "from-fuchsia-900 to-purple-950"
+      }
+    ]
+  },
+  {
+    "id": "ophthalmic",
+    "name": "Ophthalmic & ENT Preparations",
+    "shortLabel": "Ophthalmic & ENT",
+    "icon": "Eye",
+    "tagline": "Sterile precision care for sensitive ocular and ENT pathways.",
+    "description": "Sterile eye/ear drops, lubricating artificial tears, anti-infective and anti-inflammatory ophthalmic formulations.",
+    "accentColor": "#6366f1",
+    "heroImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80",
+    "stat": "Sterile Unit Production",
+    "banners": [
+      {
+        "eyebrow": "Ophthalmic Precision",
+        "title": "Sterile Ocular Lubricants & Anti-Infectives",
+        "body": "Formulated in Class 100 cleanroom environments with physiological pH buffering for gentle and effective ocular comfort.",
+        "stat": "Isotonic & Gentle",
+        "art": "eye",
+        "tint": "from-indigo-900 to-blue-950"
+      },
+      {
+        "eyebrow": "ENT Formulations",
+        "title": "Targeted Otic & Ophthalmic Solutions",
+        "body": "Sterile single and multi-dose packaging ensuring patient compliance and microbiological purity throughout usage.",
+        "stat": "Microbiologically Pure",
+        "art": "shield",
+        "tint": "from-blue-900 to-indigo-950"
+      }
+    ]
+  }
+]
+
+export const medicines: Medicine[] = [
+  {
+    "id": "nanolyte-d-3-nano-shot",
+    "name": "NANOLYTE D-3 NANO SHOT",
+    "genericName": "CHOLECALCIFEROL 60000IU",
+    "divisionId": "multivitamins",
+    "form": "Oral Solution",
+    "pack": "4 x 5ml Shots",
+    "composition": "CHOLECALCIFEROL 60000IU",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "CHOLECALCIFEROL",
+        "strength": "60000IU"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": true
+  },
+  {
+    "id": "nanolyte-d3-drops",
+    "name": "NANOLYTE D3 DROPS",
+    "genericName": "CHOLECALCIFEROL 800IU",
+    "divisionId": "multivitamins",
+    "form": "Drops",
+    "pack": "15ml Dropper Bottle",
+    "composition": "CHOLECALCIFEROL 800IU",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "CHOLECALCIFEROL",
+        "strength": "800IU"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "defzix-6-tab",
+    "name": "DEFZIX-6 TAB",
+    "genericName": "DEFLAZOCORT 6mg",
+    "divisionId": "respiratory",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "DEFLAZOCORT 6mg",
+    "indication": "Severe allergy, inflammatory conditions & immunosuppressive therapy",
+    "ingredients": [
+      {
+        "name": "DEFLAZOCORT",
+        "strength": "6mg"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "efarac-moisturizer-creem",
+    "name": "EFARAC moisturizer creem",
+    "genericName": "Refined sunflower oil ,sodium pyrrolidane carboxylic acid and sodium lactate creem",
+    "divisionId": "derma",
+    "form": "Cream",
+    "pack": "30g / 50g Lamitube",
+    "composition": "Refined sunflower oil ,sodium pyrrolidane carboxylic acid and sodium lactate creem",
+    "indication": "Dry skin hydration, barrier replenishment & xerosis",
+    "ingredients": [
+      {
+        "name": "Refined sunflower oil",
+        "strength": ""
+      },
+      {
+        "name": "sodium pyrrolidane carboxylic acid",
+        "strength": ""
+      },
+      {
+        "name": "sodium lactate creem",
+        "strength": ""
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "dydrolyte-tab",
+    "name": "DYDROLYTE TAB",
+    "genericName": "DYDROGESTERONE 10MG",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "DYDROGESTERONE 10MG",
+    "indication": "Progesterone deficiency, luteal support & threatened miscarriage",
+    "ingredients": [
+      {
+        "name": "DYDROGESTERONE",
+        "strength": "10MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "ferocan-syr",
+    "name": "FEROCAN SYR",
+    "genericName": "IRON(FERRIC PYROPHOSPHATE)+VITAMIN B12+FOLIC ACID",
+    "divisionId": "multivitamins",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "IRON(FERRIC PYROPHOSPHATE)+VITAMIN B12+FOLIC ACID",
+    "indication": "Iron deficiency anemia, pregnancy & convalescence support",
+    "ingredients": [
+      {
+        "name": "IRON(FERRIC PYROPHOSPHATE)",
+        "strength": ""
+      },
+      {
+        "name": "VITAMIN B12",
+        "strength": ""
+      },
+      {
+        "name": "FOLIC ACID",
+        "strength": ""
+      }
+    ],
+    "isFeatured": true,
+    "isNew": true
+  },
+  {
+    "id": "suclar-o-syr",
+    "name": "SUCLAR O SYR",
+    "genericName": "SUCRALFATE 1GM+OXETACAINE 20MG",
+    "divisionId": "gastro",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "SUCRALFATE 1GM+OXETACAINE 20MG",
+    "indication": "Peptic ulcers, mucosal protection & GERD relief",
+    "ingredients": [
+      {
+        "name": "SUCRALFATE",
+        "strength": "1GM"
+      },
+      {
+        "name": "OXETACAINE",
+        "strength": "20MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "suclar-syr",
+    "name": "SUCLAR SYR",
+    "genericName": "SUCRALFATE 1GM+OXETACAINE 20MG",
+    "divisionId": "gastro",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "SUCRALFATE 1GM+OXETACAINE 20MG",
+    "indication": "Peptic ulcers, mucosal protection & GERD relief",
+    "ingredients": [
+      {
+        "name": "SUCRALFATE",
+        "strength": "1GM"
+      },
+      {
+        "name": "OXETACAINE",
+        "strength": "20MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "fixbone-cq-tab",
+    "name": "FIXBONE CQ TAB",
+    "genericName": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG",
+    "indication": "Fracture healing, joint flexibility, cartilage repair & osteoporosis",
+    "ingredients": [
+      {
+        "name": "CISSUS QUADRANGULARIS",
+        "strength": "500MG"
+      },
+      {
+        "name": "MORINGA OLEIFERA",
+        "strength": "50MG"
+      },
+      {
+        "name": "CALCIUM CARBONATE",
+        "strength": "500MG"
+      },
+      {
+        "name": "VITAMIN K27",
+        "strength": "45MCG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "bromotrix-r-tab",
+    "name": "BROMOTRIX-R TAB",
+    "genericName": "TRYPSIN 48MG+BROMELAIN 90MG+RUTOSIDE TRIHYDRATE 100MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "TRYPSIN 48MG+BROMELAIN 90MG+RUTOSIDE TRIHYDRATE 100MG",
+    "indication": "Resolution of post-traumatic hematoma, wound healing & edema",
+    "ingredients": [
+      {
+        "name": "TRYPSIN",
+        "strength": "48MG"
+      },
+      {
+        "name": "BROMELAIN",
+        "strength": "90MG"
+      },
+      {
+        "name": "RUTOSIDE TRIHYDRATE",
+        "strength": "100MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "bio-cq-tab",
+    "name": "BIO-CQ TAB",
+    "genericName": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "CISSUS QUADRANGULARIS 500MG+MORINGA OLEIFERA 50MG+CALCIUM CARBONATE 500MG+VITAMIN K27 45MCG",
+    "indication": "Fracture healing, joint flexibility, cartilage repair & osteoporosis",
+    "ingredients": [
+      {
+        "name": "CISSUS QUADRANGULARIS",
+        "strength": "500MG"
+      },
+      {
+        "name": "MORINGA OLEIFERA",
+        "strength": "50MG"
+      },
+      {
+        "name": "CALCIUM CARBONATE",
+        "strength": "500MG"
+      },
+      {
+        "name": "VITAMIN K27",
+        "strength": "45MCG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": true
+  },
+  {
+    "id": "biommune-syr",
+    "name": "BIOMMUNE SYR",
+    "genericName": "Lysine Monohydrochloride 250 mg + L-Glutamic Acid 100 mg + Vitamin A Palmitate 12500 IU + Vitamin D3",
+    "divisionId": "multivitamins",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "Lysine Monohydrochloride 250 mg + L-Glutamic Acid 100 mg + Vitamin A Palmitate 12500 IU + Vitamin D3 1000 IU + Vitamin E Acetate 25 IU + Vitamin B1 7.5 mg + Vitamin B2 7.5 mg + Vitamin B6 5 mg + Vitamin B12 5 mcg + D-Panthenol 12 mg + Niacinamide 75 mg + Folic Acid 1500 mcg + Zinc Sulphate 170 mg + Cupric Sulphate 1000 mcg Syrup (per 10 ml).",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "Lysine Monohydrochloride",
+        "strength": "250 mg"
+      },
+      {
+        "name": "L-Glutamic Acid",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Vitamin A Palmitate",
+        "strength": "12500 IU"
+      },
+      {
+        "name": "Vitamin D3",
+        "strength": "1000 IU"
+      },
+      {
+        "name": "Vitamin E Acetate",
+        "strength": "25 IU"
+      },
+      {
+        "name": "Vitamin B1",
+        "strength": "7.5 mg"
+      },
+      {
+        "name": "Vitamin B2",
+        "strength": "7.5 mg"
+      },
+      {
+        "name": "Vitamin B6",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Vitamin B12",
+        "strength": "5 mcg"
+      },
+      {
+        "name": "D-Panthenol",
+        "strength": "12 mg"
+      },
+      {
+        "name": "Niacinamide",
+        "strength": "75 mg"
+      },
+      {
+        "name": "Folic Acid",
+        "strength": "1500 mcg"
+      },
+      {
+        "name": "Zinc Sulphate",
+        "strength": "170 mg"
+      },
+      {
+        "name": "Cupric Sulphate",
+        "strength": "1000 mcg"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "cartiflex-tab",
+    "name": "CARTIFLEX TAB",
+    "genericName": "Calcium Carbonate 600 mg + Undenatured CollagenType II (UC-II) 40 mg + Glucosamine 100 mg + Chondroi",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Calcium Carbonate 600 mg + Undenatured CollagenType II (UC-II) 40 mg + Glucosamine 100 mg + Chondroitin 30 mg + Rosehip Extract 40 mg + Sodium Hyaluronate 40 mg + Magnesium 30 mg + Zinc 7.5 mg + Manganese 1.8 mg + Copper 0.5 mg Tablets.",
+    "indication": "Fracture healing, joint flexibility, cartilage repair & osteoporosis",
+    "ingredients": [
+      {
+        "name": "Calcium Carbonate",
+        "strength": "600 mg"
+      },
+      {
+        "name": "Undenatured CollagenType II UC-II",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Glucosamine",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Chondroitin",
+        "strength": "30 mg"
+      },
+      {
+        "name": "Rosehip Extract",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Sodium Hyaluronate",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Magnesium",
+        "strength": "30 mg"
+      },
+      {
+        "name": "Zinc",
+        "strength": "7.5 mg"
+      },
+      {
+        "name": "Manganese",
+        "strength": "1.8 mg"
+      },
+      {
+        "name": "Copper",
+        "strength": "0.5 mg"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "biommune-capsule",
+    "name": "BIOMMUNE CAPSULE",
+    "genericName": "LYCOPENE 6000MCG+BETA CAROTENE 10MG+ZINC SULPHATE MONOHYDRATE 7.5MG+ZINC 7.5MG+VITAMIN-E 15IU+VITAMI",
+    "divisionId": "multivitamins",
+    "form": "Capsule",
+    "pack": "10x10 Blister",
+    "composition": "LYCOPENE 6000MCG+BETA CAROTENE 10MG+ZINC SULPHATE MONOHYDRATE 7.5MG+ZINC 7.5MG+VITAMIN-E 15IU+VITAMIN-C 40MG+L-GLUTAMIC ACID 25MG+SODIUM SELENATE 40MCG+SELENIUM40MCG",
+    "indication": "General immunity booster, oxidative stress & vitality",
+    "ingredients": [
+      {
+        "name": "LYCOPENE",
+        "strength": "6000MCG"
+      },
+      {
+        "name": "BETA CAROTENE",
+        "strength": "10MG"
+      },
+      {
+        "name": "ZINC SULPHATE MONOHYDRATE",
+        "strength": "7.5MG"
+      },
+      {
+        "name": "ZINC",
+        "strength": "7.5MG"
+      },
+      {
+        "name": "VITAMIN-E",
+        "strength": "15IU"
+      },
+      {
+        "name": "VITAMIN-C",
+        "strength": "40MG"
+      },
+      {
+        "name": "L-GLUTAMIC ACID",
+        "strength": "25MG"
+      },
+      {
+        "name": "SODIUM SELENATE",
+        "strength": "40MCG"
+      },
+      {
+        "name": "SELENIUM",
+        "strength": "40MCG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "cartimove-tab",
+    "name": "CARTIMOVE TAB",
+    "genericName": "L-Arginine 300 mg + Collagen Peptide Type II 40 mg + Sodium Hyaluronate 30 mg + Chondroitin Sulphate",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "L-Arginine 300 mg + Collagen Peptide Type II 40 mg + Sodium Hyaluronate 30 mg + Chondroitin Sulphate 200 mg + Vitamin C 35 mg + Rosehip Extract 375 mg + Vitamin D3 600 IU Tablets.",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "L-Arginine",
+        "strength": "300 mg"
+      },
+      {
+        "name": "Collagen Peptide Type II",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Sodium Hyaluronate",
+        "strength": "30 mg"
+      },
+      {
+        "name": "Chondroitin Sulphate",
+        "strength": "200 mg"
+      },
+      {
+        "name": "Vitamin C",
+        "strength": "35 mg"
+      },
+      {
+        "name": "Rosehip Extract",
+        "strength": "375 mg"
+      },
+      {
+        "name": "Vitamin D3",
+        "strength": "600 IU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bioflex-tab",
+    "name": "BIOFLEX TAB",
+    "genericName": "Collagen Peptide (Type I, II, III, IX, X & XII Blend) 300 mg + Boswellia serrata 50 mg + Ginger Extr",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Collagen Peptide (Type I, II, III, IX, X & XII Blend) 300 mg + Boswellia serrata 50 mg + Ginger Extract 100 mg + Curcumin 95% 100 mg + Vitamin E 60 mg + Ascorbic Acid (Vitamin C) 40 mg + Sodium Hyaluronate 30 mg + Vitamin D3 400 IU.",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "Collagen Peptide (Type I",
+        "strength": ""
+      },
+      {
+        "name": "II",
+        "strength": ""
+      },
+      {
+        "name": "III",
+        "strength": ""
+      },
+      {
+        "name": "IX",
+        "strength": ""
+      },
+      {
+        "name": "X & XII Blend",
+        "strength": "300 mg"
+      },
+      {
+        "name": "Boswellia serrata",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Ginger Extract",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Curcumin  100 mg",
+        "strength": "95%"
+      },
+      {
+        "name": "Vitamin E",
+        "strength": "60 mg"
+      },
+      {
+        "name": "Ascorbic Acid Vitamin C",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Sodium Hyaluronate",
+        "strength": "30 mg"
+      },
+      {
+        "name": "Vitamin D3 .",
+        "strength": "400 IU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "bio-q-300-capsule",
+    "name": "BIO-Q 300 CAPSULE",
+    "genericName": "LIPOSOMAL CO-ENZYME Q-10 300MG",
+    "divisionId": "gastro",
+    "form": "Capsule",
+    "pack": "10x10 Blister",
+    "composition": "LIPOSOMAL CO-ENZYME Q-10 300MG",
+    "indication": "Gastrointestinal comfort, acid reduction & digestive health",
+    "ingredients": [
+      {
+        "name": "LIPOSOMAL CO-ENZYME Q-10",
+        "strength": "300MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bio-gc4-tab",
+    "name": "BIO-GC4 TAB",
+    "genericName": "Glucosamine Sulphate 250 mg + Chondroitin Sulphate 200 mg + Collagen Peptide 150 mg + Curcumin (NLT ",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Glucosamine Sulphate 250 mg + Chondroitin Sulphate 200 mg + Collagen Peptide 150 mg + Curcumin (NLT 90%) 100 mg + L-Proline 100 mg + L-Lysine Hydrochloride 100 mg + L-Glutamine 50 mg + Vitamin C 35 mg + Quercetin 25 mg + Iron 10 mg + Zinc Sulphate 10 mg + Bambusa vulgaris 7.5 mg + Niacinamide 5 mg + Vitamin B6 (Pyridoxine) 1.4 mg + Manganese Sulphate 1 mg + Vitamin B12 (Cyanocobalamin) 1 mcg Tablets.",
+    "indication": "Fracture healing, joint flexibility, cartilage repair & osteoporosis",
+    "ingredients": [
+      {
+        "name": "Glucosamine Sulphate",
+        "strength": "250 mg"
+      },
+      {
+        "name": "Chondroitin Sulphate",
+        "strength": "200 mg"
+      },
+      {
+        "name": "Collagen Peptide",
+        "strength": "150 mg"
+      },
+      {
+        "name": "Curcumin NLT  100 mg",
+        "strength": "90%"
+      },
+      {
+        "name": "L-Proline",
+        "strength": "100 mg"
+      },
+      {
+        "name": "L-Lysine Hydrochloride",
+        "strength": "100 mg"
+      },
+      {
+        "name": "L-Glutamine",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Vitamin C",
+        "strength": "35 mg"
+      },
+      {
+        "name": "Quercetin",
+        "strength": "25 mg"
+      },
+      {
+        "name": "Iron",
+        "strength": "10 mg"
+      },
+      {
+        "name": "Zinc Sulphate",
+        "strength": "10 mg"
+      },
+      {
+        "name": "Bambusa vulgaris",
+        "strength": "7.5 mg"
+      },
+      {
+        "name": "Niacinamide",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Vitamin B6 Pyridoxine",
+        "strength": "1.4 mg"
+      },
+      {
+        "name": "Manganese Sulphate",
+        "strength": "1 mg"
+      },
+      {
+        "name": "Vitamin B12 Cyanocobalamin",
+        "strength": "1 mcg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "biommune-drops",
+    "name": "BIOMMUNE DROPS",
+    "genericName": "Vitamin A Palmitate 1150 IU + Vitamin D3 400 IU + Vitamin E 2.5 IU + Vitamin B1 0.2 mg + Vitamin B2 ",
+    "divisionId": "multivitamins",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "Vitamin A Palmitate 1150 IU + Vitamin D3 400 IU + Vitamin E 2.5 IU + Vitamin B1 0.2 mg + Vitamin B2 0.3 mg + Vitamin B6 0.3 mg + Niacinamide 3.6 mg + D-Panthenol 1 mg + Ascorbic Acid 25 mg + Zinc Sulphate 3 mg + Iodine 20 mcg + Chromium 10 mcg + Manganese 1 mg + Molybdenum 20 mcg + Selenium 10 mcg + L-Lysine Hydrochloride 10 mg + Flax Seed Oil 3 mg + Choline 25 mcg + Biotin 20 mcg + DHA 5 mg Syrup (per 5 ml).",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "Vitamin A Palmitate",
+        "strength": "1150 IU"
+      },
+      {
+        "name": "Vitamin D3",
+        "strength": "400 IU"
+      },
+      {
+        "name": "Vitamin E",
+        "strength": "2.5 IU"
+      },
+      {
+        "name": "Vitamin B1",
+        "strength": "0.2 mg"
+      },
+      {
+        "name": "Vitamin B2",
+        "strength": "0.3 mg"
+      },
+      {
+        "name": "Vitamin B6",
+        "strength": "0.3 mg"
+      },
+      {
+        "name": "Niacinamide",
+        "strength": "3.6 mg"
+      },
+      {
+        "name": "D-Panthenol",
+        "strength": "1 mg"
+      },
+      {
+        "name": "Ascorbic Acid",
+        "strength": "25 mg"
+      },
+      {
+        "name": "Zinc Sulphate",
+        "strength": "3 mg"
+      },
+      {
+        "name": "Iodine",
+        "strength": "20 mcg"
+      },
+      {
+        "name": "Chromium",
+        "strength": "10 mcg"
+      },
+      {
+        "name": "Manganese",
+        "strength": "1 mg"
+      },
+      {
+        "name": "Molybdenum",
+        "strength": "20 mcg"
+      },
+      {
+        "name": "Selenium",
+        "strength": "10 mcg"
+      },
+      {
+        "name": "L-Lysine Hydrochloride",
+        "strength": "10 mg"
+      },
+      {
+        "name": "Flax Seed Oil",
+        "strength": "3 mg"
+      },
+      {
+        "name": "Choline",
+        "strength": "25 mcg"
+      },
+      {
+        "name": "Biotin",
+        "strength": "20 mcg"
+      },
+      {
+        "name": "DHA",
+        "strength": "5 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "chymolyte-forte",
+    "name": "CHYMOLYTE FORTE",
+    "genericName": "trypsin chymotrypsin",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "trypsin chymotrypsin",
+    "indication": "Resolution of post-traumatic hematoma, wound healing & edema",
+    "ingredients": [
+      {
+        "name": "trypsin chymotrypsin",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "rosugaurd-10-tab",
+    "name": "ROSUGAURD-10 TAB",
+    "genericName": "ROSUVASTATIN CALCIUM 10MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "ROSUVASTATIN CALCIUM 10MG",
+    "indication": "Hypercholesterolemia & atherosclerotic cardiovascular disease",
+    "ingredients": [
+      {
+        "name": "ROSUVASTATIN CALCIUM",
+        "strength": "10MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "bionac-p-tab",
+    "name": "BIONAC-P TAB",
+    "genericName": "ACECLOFENAC 100MG+PARACETAMOL 325MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG",
+    "indication": "Pain, fever, osteoarthritis & rheumatoid inflammation",
+    "ingredients": [
+      {
+        "name": "ACECLOFENAC",
+        "strength": "100MG"
+      },
+      {
+        "name": "PARACETAMOL",
+        "strength": "325MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "presita-100-tab",
+    "name": "PRESITA-100 TAB",
+    "genericName": "SITAGLIPTIN 100MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "SITAGLIPTIN 100MG",
+    "indication": "Type 2 Diabetes Mellitus glycemic management",
+    "ingredients": [
+      {
+        "name": "SITAGLIPTIN",
+        "strength": "100MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "bionac-tp-8-tab",
+    "name": "BIONAC-TP-8 TAB",
+    "genericName": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 8MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 8MG",
+    "indication": "Acute musculoskeletal spasm, lower back pain & joint inflammation",
+    "ingredients": [
+      {
+        "name": "ACECLOFENAC",
+        "strength": "100MG"
+      },
+      {
+        "name": "PARACETAMOL",
+        "strength": "325MG"
+      },
+      {
+        "name": "THIOCOLCHICOSIDE",
+        "strength": "8MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "napro-d-tab",
+    "name": "NAPRO-D TAB",
+    "genericName": "NAPROXEN SODIUM 500MG+DOMPERIDONE MALEATE 10MG",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "NAPROXEN SODIUM 500MG+DOMPERIDONE MALEATE 10MG",
+    "indication": "Migraine headache, acute arthritis & dysmenorrhea",
+    "ingredients": [
+      {
+        "name": "NAPROXEN SODIUM",
+        "strength": "500MG"
+      },
+      {
+        "name": "DOMPERIDONE MALEATE",
+        "strength": "10MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bionac-tp4-tab",
+    "name": "BIONAC-TP4 TAB",
+    "genericName": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 4MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "ACECLOFENAC 100MG+PARACETAMOL 325MG+THIOCOLCHICOSIDE 4MG",
+    "indication": "Acute musculoskeletal spasm, lower back pain & joint inflammation",
+    "ingredients": [
+      {
+        "name": "ACECLOFENAC",
+        "strength": "100MG"
+      },
+      {
+        "name": "PARACETAMOL",
+        "strength": "325MG"
+      },
+      {
+        "name": "THIOCOLCHICOSIDE",
+        "strength": "4MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "flupirac-p-tab",
+    "name": "FLUPIRAC-P TAB",
+    "genericName": "FLUPIRTINE MALEATE 100MG+PARACETAMOL 325MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "FLUPIRTINE MALEATE 100MG+PARACETAMOL 325MG",
+    "indication": "Centrally acting analgesic for muscle tension & chronic pain",
+    "ingredients": [
+      {
+        "name": "FLUPIRTINE MALEATE",
+        "strength": "100MG"
+      },
+      {
+        "name": "PARACETAMOL",
+        "strength": "325MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "rabefast-dsr-capsule",
+    "name": "RABEFAST-DSR CAPSULE",
+    "genericName": "RABEPRAZOLE SODIUM 20MG+DOMPERIDONE 30MG",
+    "divisionId": "gastro",
+    "form": "Capsule",
+    "pack": "10x10 Blister",
+    "composition": "RABEPRAZOLE SODIUM 20MG+DOMPERIDONE 30MG",
+    "indication": "Acid peptic disease, hyperacidity, GERD & dyspepsia",
+    "ingredients": [
+      {
+        "name": "RABEPRAZOLE SODIUM",
+        "strength": "20MG"
+      },
+      {
+        "name": "DOMPERIDONE",
+        "strength": "30MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "biofenac-tc-tab",
+    "name": "BIOFENAC-TC TAB",
+    "genericName": "Aceclofenac (100mg) + Paracetamol (325mg) + Trypsin Chymotrypsin (150000AU)",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Trypsin Chymotrypsin (150000AU)",
+    "indication": "Pain, fever, osteoarthritis & rheumatoid inflammation",
+    "ingredients": [
+      {
+        "name": "Aceclofenac",
+        "strength": "100mg"
+      },
+      {
+        "name": "Paracetamol",
+        "strength": "325mg"
+      },
+      {
+        "name": "Trypsin Chymotrypsin",
+        "strength": "150000AU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "irotex-xt",
+    "name": "IROTEX-XT",
+    "genericName": "FERROUS ASCORBATE 100MG+FOLIC ACID 1.5MG+ZINC SULPHATE MONOHYDRATE 22.5MG",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "FERROUS ASCORBATE 100MG+FOLIC ACID 1.5MG+ZINC SULPHATE MONOHYDRATE 22.5MG",
+    "indication": "Iron deficiency anemia, pregnancy & convalescence support",
+    "ingredients": [
+      {
+        "name": "FERROUS ASCORBATE",
+        "strength": "100MG"
+      },
+      {
+        "name": "FOLIC ACID",
+        "strength": "1.5MG"
+      },
+      {
+        "name": "ZINC SULPHATE MONOHYDRATE",
+        "strength": "22.5MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "zymivis-syr",
+    "name": "ZYMIVIS SYR",
+    "genericName": "DIGESTIVE ENZYME SYR",
+    "divisionId": "gastro",
+    "form": "Syrup",
+    "pack": "100ml / 200ml Bottle",
+    "composition": "DIGESTIVE ENZYME SYR",
+    "indication": "Indigestion, dyspepsia, bloating & digestive enzyme support",
+    "ingredients": [
+      {
+        "name": "DIGESTIVE ENZYME SYR",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "telmonex-40",
+    "name": "TELMONEX 40",
+    "genericName": "telmisartan 40 MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "telmisartan 40 MG",
+    "indication": "Essential hypertension & cardiovascular risk reduction",
+    "ingredients": [
+      {
+        "name": "telmisartan",
+        "strength": "40 MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "telmonex-am",
+    "name": "TELMONEX AM",
+    "genericName": "telmisartan 40 MG + amlodipine 5MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "telmisartan 40 MG + amlodipine 5MG",
+    "indication": "Essential hypertension & cardiovascular risk reduction",
+    "ingredients": [
+      {
+        "name": "telmisartan",
+        "strength": "40 MG"
+      },
+      {
+        "name": "amlodipine",
+        "strength": "5MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "telmonex-h",
+    "name": "TELMONEX H",
+    "genericName": "telmisartan 40MG hydrochlorothiazide 12.5 MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "telmisartan 40MG hydrochlorothiazide 12.5 MG",
+    "indication": "Essential hypertension & cardiovascular risk reduction",
+    "ingredients": [
+      {
+        "name": "telmisartan  hydrochlorothiazide 12.5 MG",
+        "strength": "40MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "telmonex-ah-tab",
+    "name": "TELMONEX AH TAB",
+    "genericName": "Telmisartan 40 MG Amlodipine 5MG Hydrochlorothiazide 12.5 MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Telmisartan 40 MG Amlodipine 5MG Hydrochlorothiazide 12.5 MG",
+    "indication": "Essential hypertension & cardiovascular risk reduction",
+    "ingredients": [
+      {
+        "name": "Telmisartan  Amlodipine 5MG Hydrochlorothiazide 12.5 MG",
+        "strength": "40 MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "thialyte-tab",
+    "name": "THIALYTE TAB",
+    "genericName": "thiamine 100mg",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "thiamine 100mg",
+    "indication": "Vitamin B1 deficiency & metabolic nerve health",
+    "ingredients": [
+      {
+        "name": "thiamine",
+        "strength": "100mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "setotix-pt-300-mg-tab",
+    "name": "SETOTIX PT 300 MG TAB",
+    "genericName": "s etodolac 300 MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "s etodolac 300 MG",
+    "indication": "Relief of pain, inflammation, swelling and muscular tension",
+    "ingredients": [
+      {
+        "name": "s etodolac",
+        "strength": "300 MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "gabatrix-nt",
+    "name": "GABATRIX NT",
+    "genericName": "gabapentin 400 MG and nortriptyline 10 MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "gabapentin 400 MG and nortriptyline 10 MG",
+    "indication": "Neuropathic pain, post-herpetic neuralgia & nerve discomfort",
+    "ingredients": [
+      {
+        "name": "gabapentin",
+        "strength": "400 MG"
+      },
+      {
+        "name": "nortriptyline",
+        "strength": "10 MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "presita-100-500",
+    "name": "PRESITA 100/500",
+    "genericName": "sitagliptin 100 mg metformin 500MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "sitagliptin 100 mg metformin 500MG",
+    "indication": "Type 2 Diabetes Mellitus glycemic management",
+    "ingredients": [
+      {
+        "name": "sitagliptin  metformin 500MG",
+        "strength": "100 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "furlyte-s-tab",
+    "name": "FURLYTE-S TAB",
+    "genericName": "furosemide 40mg spironolactone 50mg",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "furosemide 40mg spironolactone 50mg",
+    "indication": "Iron deficiency anemia, pregnancy & convalescence support",
+    "ingredients": [
+      {
+        "name": "furosemide  spironolactone 50mg",
+        "strength": "40mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "mecolyte-gold-inj",
+    "name": "MECOLYTE GOLD INJ",
+    "genericName": "Methylcobalamin 1500MCG, Thiamine HCl 100MG , Pyridoxine HCl 100MG , Nicotinamide 100MG , D-Pantheno",
+    "divisionId": "multivitamins",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "Methylcobalamin 1500MCG, Thiamine HCl 100MG , Pyridoxine HCl 100MG , Nicotinamide 100MG , D-Panthenol 50MG Injection",
+    "indication": "Vitamin B1 deficiency & metabolic nerve health",
+    "ingredients": [
+      {
+        "name": "Methylcobalamin",
+        "strength": "1500MCG"
+      },
+      {
+        "name": "Thiamine HCl",
+        "strength": "100MG"
+      },
+      {
+        "name": "Pyridoxine HCl",
+        "strength": "100MG"
+      },
+      {
+        "name": "Nicotinamide",
+        "strength": "100MG"
+      },
+      {
+        "name": "D-Panthenol",
+        "strength": "50MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "torspiro-10-50",
+    "name": "TORSPIRO 10/50",
+    "genericName": "torsemide 10MG spironolactone 50MG",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "torsemide 10MG spironolactone 50MG",
+    "indication": "Iron deficiency anemia, pregnancy & convalescence support",
+    "ingredients": [
+      {
+        "name": "torsemide  spironolactone 50MG",
+        "strength": "10MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "lizo-600-mg-tab",
+    "name": "LIZO 600 MG TAB",
+    "genericName": "linezolid 600 mg",
+    "divisionId": "anti-infectives",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "linezolid 600 mg",
+    "indication": "Bacterial infections of the respiratory, urinary & skin tracts",
+    "ingredients": [
+      {
+        "name": "linezolid",
+        "strength": "600 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bionac-sp",
+    "name": "BIONAC SP",
+    "genericName": "acecloAceclofenac 100 MG +paracetamol 325MG +serratiopeptidasE 15MG",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "acecloAceclofenac 100 MG +paracetamol 325MG +serratiopeptidasE 15MG",
+    "indication": "Post-operative pain, edema & inflammatory swelling",
+    "ingredients": [
+      {
+        "name": "acecloAceclofenac",
+        "strength": "100 MG"
+      },
+      {
+        "name": "paracetamol",
+        "strength": "325MG"
+      },
+      {
+        "name": "serratiopeptidasE",
+        "strength": "15MG"
+      }
+    ],
+    "isFeatured": true,
+    "isNew": false
+  },
+  {
+    "id": "thio-q-gel",
+    "name": "THIO Q GEL",
+    "genericName": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Thiocolchicoside I",
+    "divisionId": "derma",
+    "form": "Cream",
+    "pack": "30g / 50g Lamitube",
+    "composition": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Thiocolchicoside IP 0.125% w/w + Virgin Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w Gel.",
+    "indication": "Topical treatment of dermatological skin conditions",
+    "ingredients": [
+      {
+        "name": "Diclofenac Diethylamine IP  w/w Equivalent to Diclofenac Sodium 1.0% w/w",
+        "strength": "1.16%"
+      },
+      {
+        "name": "Thiocolchicoside IP  w/w",
+        "strength": "0.125%"
+      },
+      {
+        "name": "Virgin Linseed Oil BP  w/w",
+        "strength": "3%"
+      },
+      {
+        "name": "Methyl Salicylate IP  w/w",
+        "strength": "10%"
+      },
+      {
+        "name": "Menthol IP  w/w Gel.",
+        "strength": "5%"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "r-pac-gel",
+    "name": "R PAC GEL",
+    "genericName": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Linseed Oil BP 3% ",
+    "divisionId": "derma",
+    "form": "Cream",
+    "pack": "30g / 50g Lamitube",
+    "composition": "Diclofenac Diethylamine IP 1.16% w/w (Equivalent to Diclofenac Sodium 1.0% w/w) + Linseed Oil BP 3% w/w + Methyl Salicylate IP 10% w/w + Menthol IP 5% w/w + Benzyl Alcohol IP 1% w/w Gel",
+    "indication": "Topical treatment of dermatological skin conditions",
+    "ingredients": [
+      {
+        "name": "Diclofenac Diethylamine IP  w/w Equivalent to Diclofenac Sodium 1.0% w/w",
+        "strength": "1.16%"
+      },
+      {
+        "name": "Linseed Oil BP  w/w",
+        "strength": "3%"
+      },
+      {
+        "name": "Methyl Salicylate IP  w/w",
+        "strength": "10%"
+      },
+      {
+        "name": "Menthol IP  w/w",
+        "strength": "5%"
+      },
+      {
+        "name": "Benzyl Alcohol IP  w/w Gel",
+        "strength": "1%"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "pantorac-inj",
+    "name": "PANTORAC INJ",
+    "genericName": "pantoprazole injection",
+    "divisionId": "gastro",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "pantoprazole injection",
+    "indication": "Gastrointestinal comfort, acid reduction & digestive health",
+    "ingredients": [
+      {
+        "name": "pantoprazole",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "thio-q-4-inj",
+    "name": "THIO Q 4 INJ",
+    "genericName": "thiocolchicoside 4 MG INJ",
+    "divisionId": "analgesics",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "thiocolchicoside 4 MG INJ",
+    "indication": "Relief of pain, inflammation, swelling and muscular tension",
+    "ingredients": [
+      {
+        "name": "thiocolchicoside  INJ",
+        "strength": "4 MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bio-q-max-300",
+    "name": "BIO Q MAX 300",
+    "genericName": "coenzyme q10 300mg Lcarnitine 500mg omega 3 Lycopene",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "coenzyme q10 300mg Lcarnitine 500mg omega 3 Lycopene",
+    "indication": "General immunity booster, oxidative stress & vitality",
+    "ingredients": [
+      {
+        "name": "coenzyme q10  Lcarnitine 500mg omega 3 Lycopene",
+        "strength": "300mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "lactul-200-ml",
+    "name": "LACTUL 200 ML",
+    "genericName": "lactulose solution",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "lactulose solution",
+    "indication": "Gastrointestinal comfort, acid reduction & digestive health",
+    "ingredients": [
+      {
+        "name": "lactulose solution",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "prolytix-dha-powder",
+    "name": "PROLYTIX DHA POWDER",
+    "genericName": "dha protein powder with dry fruits flavour",
+    "divisionId": "multivitamins",
+    "form": "Powder",
+    "pack": "Standard Unit Pack",
+    "composition": "dha protein powder with dry fruits flavour",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "dha protein powder with dry fruits flavour",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "cefubax-cv-625",
+    "name": "CEFUBAX CV 625",
+    "genericName": "cefuroxime axetil and potassium clavulanate",
+    "divisionId": "anti-infectives",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "cefuroxime axetil and potassium clavulanate",
+    "indication": "Bacterial infections of the respiratory, urinary & skin tracts",
+    "ingredients": [
+      {
+        "name": "cefuroxime axetil",
+        "strength": ""
+      },
+      {
+        "name": "potassium clavulanate",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "cefuro-sb-2-25",
+    "name": "CEFURO SB 2.25",
+    "genericName": "CEFUROXIME-1500mg & SULBACTAM- 750mg",
+    "divisionId": "anti-infectives",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "CEFUROXIME-1500mg & SULBACTAM- 750mg",
+    "indication": "Bacterial infections of the respiratory, urinary & skin tracts",
+    "ingredients": [
+      {
+        "name": "CEFUROXIME- & SULBACTAM- 750mg",
+        "strength": "1500mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "covitix-q10mg-tab",
+    "name": "COVITIX Q10MG TAB",
+    "genericName": "L-Arginine 100 mg + Coenzyme Q10 100 mg + L-Carnitine 50 mg + Alpha Lipoic Acid 50 mg + Omega-3 50 m",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "L-Arginine 100 mg + Coenzyme Q10 100 mg + L-Carnitine 50 mg + Alpha Lipoic Acid 50 mg + Omega-3 50 mg + Zinc (as Zinc Sulphate Monohydrate) 12 mg + Astaxanthin 10% 8 mg + Piperine 5 mg + Pyridoxine Hydrochloride 2 mg + Lycopene 6% 5000 mcg + Chromium (as Chromium Picolinate) 160 mcg + Selenium (as Sodium Selenate) 40 mcg + Folic Acid 118 mcg + Vitamin B12 1 mcg + Vitamin D3 400 IU + Tocopheryl Acetate 15 IU",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "L-Arginine",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Coenzyme Q10",
+        "strength": "100 mg"
+      },
+      {
+        "name": "L-Carnitine",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Alpha Lipoic Acid",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Omega-3",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Zinc as Zinc Sulphate Monohydrate",
+        "strength": "12 mg"
+      },
+      {
+        "name": "Astaxanthin  8 mg",
+        "strength": "10%"
+      },
+      {
+        "name": "Piperine",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Pyridoxine Hydrochloride",
+        "strength": "2 mg"
+      },
+      {
+        "name": "Lycopene  5000 mcg",
+        "strength": "6%"
+      },
+      {
+        "name": "Chromium as Chromium Picolinate",
+        "strength": "160 mcg"
+      },
+      {
+        "name": "Selenium as Sodium Selenate",
+        "strength": "40 mcg"
+      },
+      {
+        "name": "Folic Acid",
+        "strength": "118 mcg"
+      },
+      {
+        "name": "Vitamin B12",
+        "strength": "1 mcg"
+      },
+      {
+        "name": "Vitamin D3",
+        "strength": "400 IU"
+      },
+      {
+        "name": "Tocopheryl Acetate",
+        "strength": "15 IU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "esofast-dsr",
+    "name": "ESOFAST DSR",
+    "genericName": "Esomeprazole Magnesium Trihydrate IP + Domperidone IP 30 mg",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Esomeprazole Magnesium Trihydrate IP + Domperidone IP 30 mg",
+    "indication": "Gastrointestinal comfort, acid reduction & digestive health",
+    "ingredients": [
+      {
+        "name": "Esomeprazole Magnesium Trihydrate IP",
+        "strength": ""
+      },
+      {
+        "name": "Domperidone IP",
+        "strength": "30 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "dapalyte-10mg",
+    "name": "DAPALYTE 10MG",
+    "genericName": "dapagliflozin 10 mg",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "dapagliflozin 10 mg",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "dapagliflozin",
+        "strength": "10 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "calzon-advance-sachet",
+    "name": "CALZON ADVANCE Sachet",
+    "genericName": "Calcium Aspartate 500 mg + Collagen Peptide 5 g + Cissus quadrangularis 500 mg + Magnesium Oxide 55 ",
+    "divisionId": "multivitamins",
+    "form": "Powder",
+    "pack": "Standard Unit Pack",
+    "composition": "Calcium Aspartate 500 mg + Collagen Peptide 5 g + Cissus quadrangularis 500 mg + Magnesium Oxide 55 mg + Vitamin C 40 mg + Pyridoxal-5-Phosphate 1.5 mg + Zinc 1.5 mg + Vitamin B12 2.2 mcg + L-Methylfolate 300 mcg + Vitamin K2-7 45 mcg + Vitamin D3 600 IU Sachet",
+    "indication": "Vitamin D3 deficiency, bone mineralization & immune health",
+    "ingredients": [
+      {
+        "name": "Calcium Aspartate",
+        "strength": "500 mg"
+      },
+      {
+        "name": "Collagen Peptide",
+        "strength": "5 g"
+      },
+      {
+        "name": "Cissus quadrangularis",
+        "strength": "500 mg"
+      },
+      {
+        "name": "Magnesium Oxide",
+        "strength": "55 mg"
+      },
+      {
+        "name": "Vitamin C",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Pyridoxal-5-Phosphate",
+        "strength": "1.5 mg"
+      },
+      {
+        "name": "Zinc",
+        "strength": "1.5 mg"
+      },
+      {
+        "name": "Vitamin B12",
+        "strength": "2.2 mcg"
+      },
+      {
+        "name": "L-Methylfolate",
+        "strength": "300 mcg"
+      },
+      {
+        "name": "Vitamin K2-7",
+        "strength": "45 mcg"
+      },
+      {
+        "name": "Vitamin D3  Sachet",
+        "strength": "600 IU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "argilyte-plus",
+    "name": "argilyte plus",
+    "genericName": "L-Arginine 3 g + Lycopene 4 mg + DHA 200 mg + Proanthocyanidins 75 mg + L-Methylfolate 12.5 mg + Zin",
+    "divisionId": "multivitamins",
+    "form": "Powder",
+    "pack": "Standard Unit Pack",
+    "composition": "L-Arginine 3 g + Lycopene 4 mg + DHA 200 mg + Proanthocyanidins 75 mg + L-Methylfolate 12.5 mg + Zinc 5 mg Sachet (10 g)",
+    "indication": "General immunity booster, oxidative stress & vitality",
+    "ingredients": [
+      {
+        "name": "L-Arginine",
+        "strength": "3 g"
+      },
+      {
+        "name": "Lycopene",
+        "strength": "4 mg"
+      },
+      {
+        "name": "DHA",
+        "strength": "200 mg"
+      },
+      {
+        "name": "Proanthocyanidins",
+        "strength": "75 mg"
+      },
+      {
+        "name": "L-Methylfolate",
+        "strength": "12.5 mg"
+      },
+      {
+        "name": "Zinc  Sachet 10 g",
+        "strength": "5 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "chymore-ds",
+    "name": "CHYMORE DS",
+    "genericName": "Trypsin Chymotrypsin (200000AU)",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Trypsin Chymotrypsin (200000AU)",
+    "indication": "Resolution of post-traumatic hematoma, wound healing & edema",
+    "ingredients": [
+      {
+        "name": "Trypsin Chymotrypsin",
+        "strength": "200000AU"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "epilyte-t",
+    "name": "EPILYTE-T",
+    "genericName": "Eplerenone 25 + Torsemide 10",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Eplerenone 25 + Torsemide 10",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "Eplerenone 25",
+        "strength": ""
+      },
+      {
+        "name": "Torsemide 10",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "myosper",
+    "name": "MYOSPER",
+    "genericName": "Eperisone 50 mg + Aceclofenac 100 mg",
+    "divisionId": "analgesics",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Eperisone 50 mg + Aceclofenac 100 mg",
+    "indication": "Pain, fever, osteoarthritis & rheumatoid inflammation",
+    "ingredients": [
+      {
+        "name": "Eperisone",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Aceclofenac",
+        "strength": "100 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "amilyte-500inj",
+    "name": "AMILYTE 500INJ",
+    "genericName": "amikacin 500 mg injection",
+    "divisionId": "multivitamins",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "amikacin 500 mg injection",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "amikacin",
+        "strength": "500 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "biovitol-multivitamin-multimineral-with-antioxidant",
+    "name": "BIOVITOL (multivitamin multimineral with antioxidant)",
+    "genericName": "Lycopene 6% – 2 mg + Vitamin A (Acetate) – 600 mcg + Vitamin B1 (Thiamine) – 1.4 mg + Vitamin B2 (Ri",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Lycopene 6% – 2 mg + Vitamin A (Acetate) – 600 mcg + Vitamin B1 (Thiamine) – 1.4 mg + Vitamin B2 (Riboflavin) – 1.5 mg + Vitamin B3 (Niacinamide) – 18 mg + Vitamin B5 (Pantothenic Acid) – 5 mg + Vitamin B6 (Pyridoxine) – 2 mg + Vitamin B12 (Cyanocobalamin) – 1 mcg + Vitamin C (Ascorbic Acid) – 40 mg + Vitamin E (Acetate) – 5 mg + Zinc Sulphate – 12 mg + Manganese Chloride – 2 mg + Copper (as Cupric Sulphate) – 900 mcg + Selenium (as Sodium Selenate) – 30 mcg.",
+    "indication": "General immunity booster, oxidative stress & vitality",
+    "ingredients": [
+      {
+        "name": "Lycopene  – 2 mg",
+        "strength": "6%"
+      },
+      {
+        "name": "Vitamin A Acetate –",
+        "strength": "600 mcg"
+      },
+      {
+        "name": "Vitamin B1 Thiamine –",
+        "strength": "1.4 mg"
+      },
+      {
+        "name": "Vitamin B2 Riboflavin –",
+        "strength": "1.5 mg"
+      },
+      {
+        "name": "Vitamin B3 Niacinamide –",
+        "strength": "18 mg"
+      },
+      {
+        "name": "Vitamin B5 Pantothenic Acid –",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Vitamin B6 Pyridoxine –",
+        "strength": "2 mg"
+      },
+      {
+        "name": "Vitamin B12 Cyanocobalamin –",
+        "strength": "1 mcg"
+      },
+      {
+        "name": "Vitamin C Ascorbic Acid –",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Vitamin E Acetate –",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Zinc Sulphate –",
+        "strength": "12 mg"
+      },
+      {
+        "name": "Manganese Chloride –",
+        "strength": "2 mg"
+      },
+      {
+        "name": "Copper as Cupric Sulphate –",
+        "strength": "900 mcg"
+      },
+      {
+        "name": "Selenium as Sodium Selenate – .",
+        "strength": "30 mcg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "biovitol-z",
+    "name": "BIOVITOL Z",
+    "genericName": "multivitamin multimineral with antioxidan",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "multivitamin multimineral with antioxidan",
+    "indication": "General immunity booster, oxidative stress & vitality",
+    "ingredients": [
+      {
+        "name": "multivitamin multimineral with antioxidan",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "bioflex-c2",
+    "name": "BIOFLEX C2+",
+    "genericName": "Glucosamine Hydrochloride 1500 mg + Boswellia Serrata Extract 250 mg + Chondroitin Sulphate 100 mg +",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Glucosamine Hydrochloride 1500 mg + Boswellia Serrata Extract 250 mg + Chondroitin Sulphate 100 mg + Rosehip Extract 100 mg + Curcumin 80 mg + Sodium Hyaluronate 40 mg + Collagen Peptides Type II 40 mg + Black Pepper (Piper nigrum) Extract 5 mg + Boron 150 mcg + Vitamin B12 2.2 mcg.",
+    "indication": "Fracture healing, joint flexibility, cartilage repair & osteoporosis",
+    "ingredients": [
+      {
+        "name": "Glucosamine Hydrochloride",
+        "strength": "1500 mg"
+      },
+      {
+        "name": "Boswellia Serrata Extract",
+        "strength": "250 mg"
+      },
+      {
+        "name": "Chondroitin Sulphate",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Rosehip Extract",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Curcumin",
+        "strength": "80 mg"
+      },
+      {
+        "name": "Sodium Hyaluronate",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Collagen Peptides Type II",
+        "strength": "40 mg"
+      },
+      {
+        "name": "Black Pepper Piper nigrum Extract",
+        "strength": "5 mg"
+      },
+      {
+        "name": "Boron",
+        "strength": "150 mcg"
+      },
+      {
+        "name": "Vitamin B12 .",
+        "strength": "2.2 mcg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "rabefast-lsr-40-tab",
+    "name": "RABEFAST-LSR 40 TAB",
+    "genericName": "RABEPRAZOLE SODIUM 40MG + Levosulpiride 75 MG",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "RABEPRAZOLE SODIUM 40MG + Levosulpiride 75 MG",
+    "indication": "Acid peptic disease, hyperacidity, GERD & dyspepsia",
+    "ingredients": [
+      {
+        "name": "RABEPRAZOLE SODIUM",
+        "strength": "40MG"
+      },
+      {
+        "name": "Levosulpiride",
+        "strength": "75 MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "b3-max",
+    "name": "B3 MAX",
+    "genericName": "Omega-3 fish oil 600 DHA 300MG EPA 60MG",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Omega-3 fish oil 600 DHA 300MG EPA 60MG",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "Omega-3 fish oil 600 DHA  EPA 60MG",
+        "strength": "300MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "atora-cv-10",
+    "name": "ATORA CV 10",
+    "genericName": "Atorvastatin 10 + Clopidogrel 75",
+    "divisionId": "cardiac",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Atorvastatin 10 + Clopidogrel 75",
+    "indication": "Cardiovascular therapy & metabolic management",
+    "ingredients": [
+      {
+        "name": "Atorvastatin 10",
+        "strength": ""
+      },
+      {
+        "name": "Clopidogrel 75",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "itrax-200mg",
+    "name": "ITRAX 200MG",
+    "genericName": "Itraconazole",
+    "divisionId": "derma",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Itraconazole",
+    "indication": "Topical treatment of dermatological skin conditions",
+    "ingredients": [
+      {
+        "name": "Itraconazole",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "hydrorac-inj",
+    "name": "HYDRORAC INJ",
+    "genericName": "hydrocortisone 1000MG",
+    "divisionId": "multivitamins",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "hydrocortisone 1000MG",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "hydrocortisone",
+        "strength": "1000MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "t-bactum-1-5-inj",
+    "name": "T BACTUM-1.5 INJ",
+    "genericName": "cefoperazone 1000MG and sulbactam 500MG injection",
+    "divisionId": "multivitamins",
+    "form": "Injection",
+    "pack": "Vial with WFI",
+    "composition": "cefoperazone 1000MG and sulbactam 500MG injection",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "cefoperazone",
+        "strength": "1000MG"
+      },
+      {
+        "name": "sulbactam",
+        "strength": "500MG"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": true
+  },
+  {
+    "id": "glow-lyte-tab",
+    "name": "GLOW LYTE TAB",
+    "genericName": "L-Glutathione 500 mg + Alpha Lipoic Acid 100 mg + Pine Bark Extract 50 mg + Grape Seed Extract 50 mg",
+    "divisionId": "gastro",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "L-Glutathione 500 mg + Alpha Lipoic Acid 100 mg + Pine Bark Extract 50 mg + Grape Seed Extract 50 mg + Co-Enzyme Q10 50 mg + Vitamin C 40 mg",
+    "indication": "Gastrointestinal comfort, acid reduction & digestive health",
+    "ingredients": [
+      {
+        "name": "L-Glutathione",
+        "strength": "500 mg"
+      },
+      {
+        "name": "Alpha Lipoic Acid",
+        "strength": "100 mg"
+      },
+      {
+        "name": "Pine Bark Extract",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Grape Seed Extract",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Co-Enzyme Q10",
+        "strength": "50 mg"
+      },
+      {
+        "name": "Vitamin C",
+        "strength": "40 mg"
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  },
+  {
+    "id": "glow-lyte-soap",
+    "name": "GLOW LYTE SOAP",
+    "genericName": "Glutathione, Arbutin, Almond Oil, Kesar, Kojic Acid, Vitamin C & Vitamin E.",
+    "divisionId": "multivitamins",
+    "form": "Tablet",
+    "pack": "10x10 Alu-Alu",
+    "composition": "Glutathione, Arbutin, Almond Oil, Kesar, Kojic Acid, Vitamin C & Vitamin E.",
+    "indication": "Therapeutic nutritional supplementation & metabolic health",
+    "ingredients": [
+      {
+        "name": "Glutathione",
+        "strength": ""
+      },
+      {
+        "name": "Arbutin",
+        "strength": ""
+      },
+      {
+        "name": "Almond Oil",
+        "strength": ""
+      },
+      {
+        "name": "Kesar",
+        "strength": ""
+      },
+      {
+        "name": "Kojic Acid",
+        "strength": ""
+      },
+      {
+        "name": "Vitamin C & Vitamin E.",
+        "strength": ""
+      }
+    ],
+    "isFeatured": false,
+    "isNew": false
+  }
+]
+
+export const featuredMedicines = medicines.filter(m => m.isFeatured)
+
+export const getDivisionById = (id: string): Division | undefined =>
+  divisions.find(d => d.id === id)
+
+export const medicinesByDivision = (divisionId: string): Medicine[] =>
+  medicines.filter(m => m.divisionId === divisionId)
+
+export const getMedicinesByDivision = medicinesByDivision
+
+export const searchMedicines = (query: string): Medicine[] => {
+  const q = query.toLowerCase().trim()
+  if (!q) return medicines
+  return medicines.filter(
+    m =>
+      m.name.toLowerCase().includes(q) ||
+      (m.genericName || '').toLowerCase().includes(q) ||
+      m.composition.toLowerCase().includes(q) ||
+      m.indication.toLowerCase().includes(q) ||
+      m.ingredients.some(ing => ing.name.toLowerCase().includes(q))
+  )
+}
