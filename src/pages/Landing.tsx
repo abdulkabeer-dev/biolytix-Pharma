@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, ArrowRight, CheckCircle2, Award, Layers, Users, Calendar } from 'lucide-react'
+import { ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, ArrowRight, CheckCircle2, Award, Layers, Calendar } from 'lucide-react'
 import HeroSlider from '../components/site/HeroSlider'
 import SectionHeading from '../components/site/SectionHeading'
 import StatCounter from '../components/site/StatCounter'
@@ -47,11 +47,10 @@ export default function Landing() {
 
       {/* ── Stats Section with Relevant Icons ────────────────────────────────── */}
       <section style={{ background: '#fff', borderBottom: '1px solid #e2e8f0' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <StatCounter end={company.foundingYear || 2024} label="Established Year" icon={<Calendar size={22} />} />
           <StatCounter end={divisions.length} label="Therapeutic Divisions" icon={<Layers size={22} />} />
           <StatCounter end={medicines.length} suffix="+" label="Approved Formulations" icon={<FlaskConical size={22} />} />
-          <StatCounter end={5000} suffix="+" label="Distribution Partners" icon={<Users size={22} />} />
         </div>
       </section>
 

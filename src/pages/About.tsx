@@ -18,7 +18,7 @@ const MILESTONES = [
   {
     year: '2024',
     title: 'Company Established',
-    desc: 'Biolytix Pharmaceuticals is established in Shadnagar, Telangana with a vision to deliver premium quality, evidence-based medicines.',
+    desc: 'Biolytix Pharmaceuticals is established in Sdnr, Telangana with a vision to deliver premium quality, evidence-based medicines.',
     icon: <Building2 size={20} />,
     color: '#1a7fc1',
   },
@@ -39,7 +39,7 @@ const MILESTONES = [
   {
     year: '2026',
     title: 'Nationwide Distribution',
-    desc: 'Connecting with 5,000+ physicians, clinics, hospitals, and distribution partners across India.',
+    desc: 'Connecting with 1,000+ physicians, clinics, hospitals, and distribution partners across India.',
     icon: <Users size={20} />,
     color: '#a855f7',
   },
@@ -93,7 +93,7 @@ export default function About() {
                     { val: `Est. ${company.foundingYear || 2024}`, label: 'Established Year' },
                     { val: `${divisions.length}`, label: 'Therapeutic Divisions' },
                     { val: `${medicines.length}+`, label: 'Approved Formulations' },
-                    { val: '5,000+', label: 'Healthcare Partners' },
+                    { val: '1,000+', label: 'Healthcare Partners' },
                   ].map(s => (
                     <motion.div
                       key={s.label}

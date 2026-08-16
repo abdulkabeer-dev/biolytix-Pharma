@@ -107,7 +107,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       chips: ['WHO-GMP Certified', 'ISO 9001:2015', 'DCGI Approved'],
       image: '/images/slides/slide1.jpg',
       artColor: '#38bdf8',
-      statNumber: '5,000+',
+      statNumber: '1,000+',
       statLabel: 'Healthcare Providers',
       statDesc: 'Prescribing Biolytix formulations across India'
     },

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import BrandLogo from './BrandLogo'
 import { useDataContext } from '../../context/DataContext'
-import { MapPin, Phone, Smartphone, Mail, Clock } from 'lucide-react'
+import { MapPin, Mail, Clock, Send } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -25,20 +25,24 @@ export default function SiteFooter() {
           <p className="mt-4 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
             {company.tagline}
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {company.certifications.map(c => (
+          <div className="mt-6 flex flex-wrap gap-2">
+            {(company.certifications || []).map((c: string) => (
               <span key={c} className="cert-chip">{c}</span>
             ))}
           </div>
         </div>
 
-        {/* Quick links */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-white text-sm font-semibold uppercase tracking-widest mb-5">Company</h3>
+          <h3 className="text-white text-sm font-semibold uppercase tracking-widest mb-5">Quick Links</h3>
           <ul className="space-y-2">
             {quickLinks.map(l => (
               <li key={l.to}>
-                <Link to={l.to} className="text-sm hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                <Link
+                  to={l.to}
+                  className="text-sm hover:text-white transition-colors"
+                  style={{ color: 'rgba(255,255,255,0.65)' }}
+                >
                   {l.label}
                 </Link>
               </li>
@@ -73,20 +77,20 @@ export default function SiteFooter() {
               <span style={{ color: 'rgba(255,255,255,0.65)' }}>{company.registeredOffice}</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <Phone size={15} style={{ color: 'var(--brand-light)' }} />
-              <a href={`tel:${company.phone}`} className="hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>{company.phone}</a>
-            </li>
-            <li className="flex items-center gap-2.5">
-              <Smartphone size={15} style={{ color: 'var(--brand-light)' }} />
-              <a href={`tel:${company.mobile}`} className="hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>{company.mobile}</a>
-            </li>
-            <li className="flex items-center gap-2.5">
               <Mail size={15} style={{ color: 'var(--brand-light)' }} />
               <a href={`mailto:${company.email}`} className="hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>{company.email}</a>
             </li>
             <li className="flex items-center gap-2.5">
               <Clock size={15} style={{ color: 'var(--brand-light)' }} />
               <span style={{ color: 'rgba(255,255,255,0.65)' }}>{company.workingHours}</span>
+            </li>
+            <li className="pt-2">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-cyan-300 hover:bg-white/15 hover:text-white transition-all"
+              >
+                <Send size={12} /> Contact / Inquiry Form
+              </Link>
             </li>
           </ul>
         </div>

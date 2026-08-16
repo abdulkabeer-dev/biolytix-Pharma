@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { MapPin, Phone, Smartphone, Mail, Clock, Globe, Send, CheckCircle2 } from 'lucide-react'
+import { MapPin, Mail, Clock, Globe, Send, CheckCircle2 } from 'lucide-react'
 import PageHero from '../components/site/PageHero'
 import Reveal from '../components/site/Reveal'
 import BrandLogo from '../components/site/BrandLogo'
@@ -35,16 +35,15 @@ export default function Contact() {
       lines: [company.registeredOffice],
     },
     {
-      icon: <Phone size={22} />,
-      title: 'Phone & Mobile',
-      lines: [company.phone, company.altPhone || company.mobile || '+91 79934 67911'],
-      isPhone: true,
+      icon: <Mail size={22} />,
+      title: 'Email Communication',
+      lines: [company.email, 'Mon – Sat: 9:00 AM – 6:00 PM IST'],
+      isEmail: true,
     },
     {
-      icon: <Mail size={22} />,
-      title: 'Email & Web',
-      lines: [company.email, company.website],
-      isEmail: true,
+      icon: <Globe size={22} />,
+      title: 'Official Portal',
+      lines: [company.website, 'Product Catalogue & Dossiers'],
     },
     {
       icon: <Clock size={22} />,
@@ -92,9 +91,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-sm font-bold mb-2" style={{ color: 'var(--brand-ink)' }}>{card.title}</h3>
                   {card.lines.map((line, j) =>
-                    card.isPhone ? (
-                      <a key={j} href={`tel:${line}`} className="block text-sm mb-1 hover:text-brand transition-colors" style={{ color: 'var(--text-muted)' }}>{line}</a>
-                    ) : card.isEmail && j === 0 ? (
+                    card.isEmail && j === 0 ? (
                       <a key={j} href={`mailto:${line}`} className="block text-sm mb-1 hover:text-brand transition-colors" style={{ color: 'var(--text-muted)' }}>{line}</a>
                     ) : (
                       <p key={j} className="text-sm mb-1" style={{ color: 'var(--text-muted)' }}>{line}</p>
@@ -149,14 +146,6 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <Phone size={15} style={{ color: 'var(--brand-accent)' }} />
-                    <a href={`tel:${company.phone}`} className="text-sm" style={{ color: 'rgba(255,255,255,.85)' }}>{company.phone}</a>
-                  </div>
-                  <div className="flex gap-3">
-                    <Smartphone size={15} style={{ color: 'var(--brand-accent)' }} />
-                    <a href={`tel:${company.mobile}`} className="text-sm" style={{ color: 'rgba(255,255,255,.85)' }}>{company.mobile}</a>
-                  </div>
-                  <div className="flex gap-3">
                     <Mail size={15} style={{ color: 'var(--brand-accent)' }} />
                     <a href={`mailto:${company.email}`} className="text-sm" style={{ color: 'rgba(255,255,255,.85)' }}>{company.email}</a>
                   </div>
@@ -205,11 +194,11 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div className="text-center px-4">
-                  <p className="text-sm font-semibold" style={{ color: 'var(--brand-ink)' }}>Shadnagar, Ranga Reddy District, Telangana</p>
-                  <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>18-394/2/G/4, Mallikarjuna Colony, Shadnagar – 509216</p>
+                  <p className="text-sm font-semibold" style={{ color: 'var(--brand-ink)' }}>Sdnr, Ranga Reddy District, Telangana</p>
+                  <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>18-394/2/G/4, Mallikarjuna Colony, Sdnr – 509216</p>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Mallikarjuna+Colony+Shadnagar+Ranga+Reddy+Telangana+509216"
+                  href="https://maps.google.com/?q=Mallikarjuna+Colony+Sdnr+Ranga+Reddy+Telangana+509216"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary text-sm"
@@ -344,7 +333,7 @@ export default function Contact() {
                 </button>
 
                 <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
-                  We typically respond within 1-2 business days. For urgent matters, call <a href={`tel:${company.phone}`} className="text-brand font-semibold">{company.phone}</a>.
+                  We typically respond within 1-2 business days. For direct inquiries, email us at <a href={`mailto:${company.email}`} className="text-brand font-semibold">{company.email}</a>.
                 </p>
               </form>
             </Reveal>

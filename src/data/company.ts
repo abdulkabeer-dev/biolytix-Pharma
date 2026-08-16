@@ -31,9 +31,9 @@ export const company: CompanyInfo = {
 
   // ── Contact ───────────────────────────────────────────────────────────────
   registeredOffice:
-    "18-394/2/G/4, Mallikarjuna Colony, Shadnagar, Ranga Reddy – 509216, Telangana, India",
+    "18-394/2/G/4, Mallikarjuna Colony, Sdnr, Ranga Reddy – 509216, Telangana, India",
   correspondenceOffice:
-    "18-394/2/G/4, Mallikarjuna Colony, Shadnagar, Ranga Reddy – 509216, Telangana, India",
+    "18-394/2/G/4, Mallikarjuna Colony, Sdnr, Ranga Reddy – 509216, Telangana, India",
   phone: "+91 93473 34911",
   mobile: "+91 79934 67911",
   altPhone: "+91 79934 67911",
@@ -49,5 +49,5 @@ export const company: CompanyInfo = {
   yearsOfExcellence: Math.max(1, new Date().getFullYear() - 2024 || 2),
   divisionsCount: 8,
   formulationsCount: "73+",
-  distributionPartners: "5,000+",
+  distributionPartners: "1,000+",
 }

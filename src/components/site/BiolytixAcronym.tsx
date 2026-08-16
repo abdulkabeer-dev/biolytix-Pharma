@@ -20,7 +20,7 @@ const ACRONYM_ITEMS = [
   { letter: 'O', word: 'Outstanding', desc: 'Proven clinical outcomes across 8 divisions', color: '#10b981' },
   { letter: 'L', word: 'Leading', desc: 'Ethical pharmaceutical marketing & distribution', color: '#6366f1' },
   { letter: 'Y', word: 'Your Health', desc: 'Patient well-being is our highest corporate duty', color: '#f43f5e' },
-  { letter: 'T', word: 'Trusted', desc: 'Prescribed by 5,000+ physicians & institutions', color: '#f59e0b' },
+  { letter: 'T', word: 'Trusted', desc: 'Prescribed by 1,000+ physicians & institutions', color: '#f59e0b' },
   { letter: 'I', word: 'Integrity', desc: '100% transparent testing & audited API sourcing', color: '#14b8a6' },
   { letter: 'X', word: 'eXcellence', desc: 'Zero-defect manufacturing in WHO-GMP facilities', color: '#a855f7' },
 ]

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, Phone, ChevronDown, Award, Building2 } from 'lucide-react'
+import { Menu, X, Mail, ChevronDown, Award, Building2 } from 'lucide-react'
 import BrandLogo from './BrandLogo'
 import { useDataContext } from '../../context/DataContext'
 
@@ -55,9 +55,9 @@ export default function SiteHeader() {
             <span>✉ {company.email}</span>
             <span>🕐 {company.workingHours}</span>
           </div>
-          <a href={`tel:${company.phone}`} className="flex items-center gap-1.5 font-semibold hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,.9)' }}>
-            <Phone size={12} /> {company.phone}
-          </a>
+          <Link to="/contact" className="flex items-center gap-1.5 font-semibold text-cyan-300 hover:text-white transition-colors">
+            <Mail size={12} /> Contact & Inquiries
+          </Link>
         </div>
       </div>
 
@@ -331,10 +331,10 @@ export default function SiteHeader() {
                   Partner With Us
                 </Link>
                 <a
-                  href={`tel:${company.phone}`}
-                  className="mt-3 flex items-center justify-center gap-2 text-sm text-gray-600"
+                  href={`mailto:${company.email}`}
+                  className="mt-3 flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-brand"
                 >
-                  <Phone size={14} /> {company.phone}
+                  <Mail size={14} /> {company.email}
                 </a>
               </div>
             </div>

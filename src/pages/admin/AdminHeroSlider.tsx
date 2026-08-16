@@ -58,7 +58,7 @@ export default function AdminHeroSlider() {
     chips: 'WHO-GMP Certified, ISO 9001:2015, DCGI Approved',
     image: '/images/slides/slide1.jpg',
     artColor: '#38bdf8',
-    statNumber: '5,000+',
+    statNumber: '1,000+',
     statLabel: 'Healthcare Providers',
     statDesc: 'Prescribing Biolytix formulations across India',
   })
@@ -521,7 +521,7 @@ export default function AdminHeroSlider() {
               <label className="block font-semibold text-slate-300 mb-1">Key Stat</label>
               <input
                 type="text"
-                placeholder="e.g. 5,000+"
+                placeholder="e.g. 1,000+"
                 value={formData.statNumber}
                 onChange={(e) => setFormData({ ...formData, statNumber: e.target.value })}
                 className="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-bold"

@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import WhatsAppButton from './WhatsAppButton'
 import PageLoader from './PageLoader'
 
 export default function SiteLayout() {
@@ -20,7 +19,6 @@ export default function SiteLayout() {
         <Outlet />
       </main>
       <SiteFooter />
-      <WhatsAppButton />
     </div>
   )
 }

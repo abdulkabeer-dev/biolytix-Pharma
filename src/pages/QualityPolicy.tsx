@@ -38,12 +38,32 @@ const PILLARS = [
   },
 ]
 
-const BATCH_STEPS = [
-  { num: '01', title: 'Raw Material Sourcing', desc: 'APIs and excipients procured from approved, audited vendors. Every incoming material undergoes identity and purity testing before acceptance.' },
-  { num: '02', title: 'Manufacturing', desc: 'Production carried out in WHO-GMP compliant facilities by trained personnel, following validated Standard Operating Procedures (SOPs) for each dosage form.' },
-  { num: '03', title: 'In-Process & Finished QC', desc: 'In-process checks at critical control points plus comprehensive finished product testing — assay, dissolution, microbial limits, and stability — before batch can progress.' },
-  { num: '04', title: 'Batch Release', desc: 'Authorised Quality Assurance personnel review all batch documentation and test results. Only batches meeting all specifications are released for distribution.' },
-  { num: '05', title: 'Post-Market Vigilance', desc: 'Continued monitoring of product performance and adverse event reports through our pharmacovigilance system, with systematic feedback loops for improvement.' },
+const MARKETING_STRATEGY_STEPS = [
+  {
+    num: '01',
+    title: 'Therapeutic Portfolio & Need Assessment',
+    desc: 'Targeting unmet clinical requirements across 8 therapeutic divisions to curate an evidence-based formulation portfolio aligned with current healthcare demands.',
+  },
+  {
+    num: '02',
+    title: 'Audited WHO-GMP Manufacturing Partnerships',
+    desc: 'Collaborating exclusively with certified WHO-GMP and Schedule M compliant manufacturing facilities, subjected to stringent quality audits and batch-release inspections.',
+  },
+  {
+    num: '03',
+    title: 'GDP-Certified Distribution & Cold-Chain Logistics',
+    desc: 'Implementing certified Good Distribution Practice (GDP) protocols, climate-controlled warehousing, and tamper-evident packaging to maintain uncompromised product integrity.',
+  },
+  {
+    num: '04',
+    title: 'Ethical Medical Detailing & Scientific Engagement',
+    desc: 'Empowering physicians and healthcare institutions with comprehensive product dossiers, transparent clinical data, and dedicated scientific communication.',
+  },
+  {
+    num: '05',
+    title: 'Pharmacovigilance & Continuous Market Feedback',
+    desc: 'Operating robust post-market safety surveillance and systematic doctor feedback loops to drive ongoing therapeutic refinement and supply agility.',
+  },
 ]
 
 export default function QualityPolicy() {
@@ -73,7 +93,7 @@ export default function QualityPolicy() {
             >
               <p className="eyebrow mb-4">Our Quality Policy Statement</p>
               <blockquote className="text-base sm:text-lg leading-relaxed italic" style={{ color: 'var(--brand-ink)' }}>
-                "Biolytix Pharmaceuticals is committed to manufacturing pharmaceutical products that consistently meet the requirements of our customers, regulatory authorities, and all applicable pharmacopoeial standards. We achieve this through a culture of continuous improvement, robust quality management systems, and the active involvement of every team member in upholding the highest standards of safety, efficacy, and quality — at every stage of the product lifecycle."
+                "Biolytix Pharmaceuticals is committed to marketing pharmaceutical products that consistently meet the requirements of our customers, regulatory authorities, and all applicable pharmacopoeial standards. We achieve this through a culture of continuous improvement, robust quality management systems, and the active involvement of every team member in upholding the highest standards of safety, efficacy, and quality — at every stage of the product lifecycle."
               </blockquote>
               <div className="mt-5 flex items-center gap-3">
                 <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 14, fontWeight: 700 }}>MD</div>
@@ -111,16 +131,16 @@ export default function QualityPolicy() {
         </div>
       </section>
 
-      {/* ── Batch Journey ─────────────────────────────────────────────────── */}
+      {/* ── Marketing Company Strategy ────────────────────────────────────── */}
       <section className="section" style={{ background: '#fff' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <SectionHeading
-            eyebrow="From Raw Material to Patient"
-            title="The Biolytix Batch Journey"
-            description="Five rigorous stages separate every raw material from a released, market-ready medicine."
+            eyebrow="Commercial Excellence & Quality Governance"
+            title="Marketing Company Strategy"
+            description="Our structured pharmaceutical marketing model connects state-of-the-art WHO-GMP manufacturing with doctors, hospitals, and pharmacies nationwide."
           />
           <div className="space-y-5">
-            {BATCH_STEPS.map((step, i) => (
+            {MARKETING_STRATEGY_STEPS.map((step, i) => (
               <Reveal key={step.num} delay={i * 0.08}>
                 <div className="card flex gap-5 p-5" style={{ borderLeft: '3px solid var(--brand)' }}>
                   <div style={{ width: 48, height: 48, borderRadius: 12, background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-accent) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: 15, flexShrink: 0 }}>

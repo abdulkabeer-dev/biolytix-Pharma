@@ -33,7 +33,7 @@ const SLIDES: SlideData[] = [
     icon: ShieldCheck,
     image: '/images/slides/slide1.jpg',
     artColor: '#38bdf8',
-    statNumber: '5,000+',
+    statNumber: '1,000+',
     statLabel: 'Healthcare Providers',
     statDesc: 'Prescribing Biolytix formulations across India'
   },
