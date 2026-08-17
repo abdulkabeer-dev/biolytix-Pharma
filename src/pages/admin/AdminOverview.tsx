@@ -84,7 +84,7 @@ export default function AdminOverview() {
               Dynamic Catalogue & Content Administration
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-              Manage all 73+ pharmaceutical formulations, therapeutic divisions, homepage hero banners, and customer inquiries with instantaneous multi-browser synchronization.
+              Manage all {medicines.length} pharmaceutical formulations across {divisions.length} therapeutic divisions, homepage hero banners, and customer inquiries with instantaneous multi-browser synchronization.
             </p>
           </div>
 
@@ -96,10 +96,10 @@ export default function AdminOverview() {
               <Plus size={15} /> Add Formulation
             </Link>
             <Link
-              to="/admin/slides"
-              className="btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 inline-flex items-center gap-2"
+              to="/admin/products"
+              className="btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 inline-flex items-center gap-2"
             >
-              <Sliders size={15} /> Hero Slider Editor
+              <ArrowRight size={15} /> Reorder Between Divisions
             </Link>
           </div>
         </div>
@@ -149,9 +149,14 @@ export default function AdminOverview() {
                 <Layers size={18} className="text-purple-400" />
                 <h3 className="text-sm font-bold text-white">Formulations by Therapeutic Division</h3>
               </div>
-              <Link to="/admin/divisions" className="text-xs text-cyan-400 hover:underline flex items-center gap-1 font-semibold">
-                Manage Divisions <ArrowRight size={12} />
-              </Link>
+              <div className="flex items-center gap-3">
+                <Link to="/admin/products" className="text-xs text-cyan-400 hover:underline flex items-center gap-1 font-semibold">
+                  Reorder Formulations <ArrowRight size={12} />
+                </Link>
+                <Link to="/admin/divisions" className="text-xs text-slate-400 hover:text-slate-200 flex items-center gap-1 font-semibold">
+                  Divisions <ArrowRight size={12} />
+                </Link>
+              </div>
             </div>
 
             <div className="space-y-3.5">

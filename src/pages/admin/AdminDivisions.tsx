@@ -21,6 +21,13 @@ const ICON_OPTIONS = [
   'Eye',
   'Zap',
   'Shield',
+  'Thermometer',
+  'Leaf',
+  'Wind',
+  'Baby',
+  'Brain',
+  'Syringe',
+  'Bandage',
 ]
 
 const ART_OPTIONS: DivisionBannerSlide['art'][] = [

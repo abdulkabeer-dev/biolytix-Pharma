@@ -1,6 +1,9 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, Plus, Search, X } from 'lucide-react'
+import { 
+  ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, 
+  Plus, Search, X, Activity, Zap, Pill, Syringe, Bandage, Shield, Baby, Brain
+} from 'lucide-react'
 import PageHero from '../components/site/PageHero'
 import DivisionBanner from '../components/site/DivisionBanner'
 import FormArt from '../components/site/FormArt'
@@ -10,12 +13,13 @@ import type { Division, Medicine } from '../data/products'
 
 const DIVISION_ICONS: Record<string, React.ComponentType<{ size?: number; strokeWidth?: number; className?: string; style?: React.CSSProperties }>> = {
   ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye,
+  Activity, Zap, Pill, Syringe, Bandage, Shield, Baby, Brain
 }
 
 // Accent colors per division order
 const DIV_COLORS = [
-  '#1a7fc1', '#f97316', '#10b981', '#0ea5e9',
-  '#22c55e', '#f43f5e', '#a855f7', '#6366f1',
+  '#22c55e', '#f97316', '#0284c7', '#8b5cf6', '#10b981', '#1a7fc1',
+  '#ec4899', '#f43f5e', '#a855f7', '#06b6d4', '#e11d48',
 ]
 
 export default function Products() {
@@ -26,6 +30,8 @@ export default function Products() {
   const [selectedForm, setSelectedForm] = useState<string>('All')
 
   function getDivisionColor(divisionId: string) {
+    const div = divisions.find(d => d.id === divisionId)
+    if (div?.accentColor) return div.accentColor
     const idx = divisions.findIndex(d => d.id === divisionId)
     return DIV_COLORS[idx % DIV_COLORS.length] ?? 'var(--brand)'
   }
@@ -87,7 +93,7 @@ export default function Products() {
       <PageHero
         eyebrow="Product Portfolio"
         title="Dependable Medicines Across Every Therapy Area."
-        description="8 therapeutic divisions · 120+ formulations · WHO-GMP certified manufacturing"
+        description={`${divisions.length} therapeutic divisions · ${medicines.length}+ formulations · WHO-GMP certified manufacturing`}
         breadcrumbs={[{ label: 'Products' }]}
         bgImage="/images/heroes/products.jpg"
       />

@@ -136,6 +136,38 @@ export function viteApiPlugin(): Plugin {
           }
 
           // ── PRODUCTS CRUD ────────────────────────────────────────────────
+          if (url === '/api/products/reorder' && method === 'PUT') {
+            const body = await parseJsonBody(req)
+            if (Array.isArray(body.medicines)) {
+              db.medicines = body.medicines
+              logAudit(db, 'REORDER', 'PRODUCT', `Reordered product catalogue & division assignments (${body.medicines.length} products)`)
+              writeDb(db)
+              broadcastSSE('sync', { type: 'PRODUCT_REORDER', medicines: db.medicines, db })
+              return sendJson(res, 200, { success: true, medicines: db.medicines, message: 'Products sequence updated successfully.' })
+            }
+            return sendJson(res, 400, { error: 'Invalid medicines array' })
+          }
+
+          if (url === '/api/products/batch-move' && method === 'POST') {
+            const { medicineIds, targetDivisionId } = await parseJsonBody(req)
+            if (!Array.isArray(medicineIds) || !targetDivisionId) {
+              return sendJson(res, 400, { error: 'medicineIds array and targetDivisionId required' })
+            }
+            const targetDiv = (db.divisions || []).find((d: any) => d.id === targetDivisionId)
+            const divName = targetDiv ? targetDiv.name : targetDivisionId
+            let movedCount = 0
+            db.medicines.forEach((m: any) => {
+              if (medicineIds.includes(m.id)) {
+                m.divisionId = targetDivisionId
+                movedCount++
+              }
+            })
+            logAudit(db, 'UPDATE', 'PRODUCT', `Moved ${movedCount} products to division "${divName}"`)
+            writeDb(db)
+            broadcastSSE('sync', { type: 'PRODUCT_BATCH_MOVE', medicineIds, targetDivisionId, db })
+            return sendJson(res, 200, { success: true, movedCount, message: `Moved ${movedCount} products to ${divName}.` })
+          }
+
           if (url === '/api/products' && method === 'POST') {
             const newProduct = await parseJsonBody(req)
             if (!newProduct.id) {

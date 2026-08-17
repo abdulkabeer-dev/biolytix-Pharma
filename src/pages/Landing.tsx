@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, ArrowRight, CheckCircle2, Award, Layers, Calendar } from 'lucide-react'
+import { 
+  ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye, 
+  ArrowRight, CheckCircle2, Award, Layers, Calendar, Activity, Zap, Pill, Syringe, Bandage, Shield, Baby, Brain
+} from 'lucide-react'
 import HeroSlider from '../components/site/HeroSlider'
 import SectionHeading from '../components/site/SectionHeading'
 import StatCounter from '../components/site/StatCounter'
@@ -11,6 +14,7 @@ import { useDataContext } from '../context/DataContext'
 
 const DIVISION_ICONS: Record<string, React.ComponentType<{ size?: number; strokeWidth?: number; className?: string; style?: React.CSSProperties }>> = {
   ShieldPlus, Thermometer, FlaskConical, Wind, Leaf, HeartPulse, Sparkles, Eye,
+  Activity, Zap, Pill, Syringe, Bandage, Shield, Baby, Brain
 }
 
 const QUALITY_CARDS = [
@@ -21,8 +25,8 @@ const QUALITY_CARDS = [
 ]
 
 const DIV_COLORS = [
-  '#1a7fc1', '#f97316', '#10b981', '#0ea5e9',
-  '#22c55e', '#f43f5e', '#a855f7', '#6366f1',
+  '#22c55e', '#f97316', '#0284c7', '#8b5cf6', '#10b981', '#1a7fc1',
+  '#ec4899', '#f43f5e', '#a855f7', '#06b6d4', '#e11d48',
 ]
 
 const staggerContainer = {
@@ -37,7 +41,7 @@ const fadeUp = {
 
 export default function Landing() {
   const { divisions, medicines, company } = useDataContext()
-  const featured = medicines.filter(m => m.featured)
+  const featured = medicines.filter(m => m.isFeatured || (m as any).featured)
   const displayMedicines = featured.length > 0 ? featured : medicines.slice(0, 8)
 
   return (
@@ -45,8 +49,8 @@ export default function Landing() {
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
       <HeroSlider />
 
-      {/* ── Stats Section with Relevant Icons ────────────────────────────────── */}
-      <section style={{ background: '#fff', borderBottom: '1px solid #e2e8f0' }}>
+      {/* ── Top Key Metric Stats Strip ────────────────────────────────────── */}
+      <section style={{ background: 'var(--surface-alt)', borderBottom: '1px solid #e2e8f0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <StatCounter end={company.foundingYear || 2024} label="Established Year" icon={<Calendar size={22} />} />
           <StatCounter end={divisions.length} label="Therapeutic Divisions" icon={<Layers size={22} />} />
@@ -62,7 +66,7 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
             eyebrow="Our Divisions"
-            title="8 Therapeutic Areas, One Standard"
+            title={`${divisions.length} Therapeutic Areas, One Standard`}
             description="From general medicine to specialty therapeutics — our portfolio covers the most critical segments of patient care."
           />
           <motion.div
@@ -74,7 +78,7 @@ export default function Landing() {
           >
             {divisions.map((div, i) => {
               const Icon = DIVISION_ICONS[div.icon] || ShieldPlus
-              const color = DIV_COLORS[i % DIV_COLORS.length]
+              const color = div.accentColor || DIV_COLORS[i % DIV_COLORS.length]
               return (
                 <motion.div key={div.id} variants={fadeUp}>
                   <motion.div whileHover={{ y: -4, scale: 1.02 }} transition={{ duration: 0.2 }}>

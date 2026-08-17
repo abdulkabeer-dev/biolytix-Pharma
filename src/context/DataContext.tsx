@@ -68,6 +68,9 @@ interface DataContextType {
   addProduct: (product: Omit<Medicine, 'id'> & { id?: string }) => Promise<boolean>
   updateProduct: (id: string, product: Partial<Medicine>) => Promise<boolean>
   deleteProduct: (id: string) => Promise<boolean>
+  reorderMedicines: (medicines: Medicine[]) => Promise<boolean>
+  moveMedicineDivision: (medicineId: string, targetDivisionId: string) => Promise<boolean>
+  batchMoveDivision: (medicineIds: string[], targetDivisionId: string) => Promise<boolean>
 
   addDivision: (division: Omit<Division, 'id'> & { id?: string }) => Promise<boolean>
   updateDivision: (id: string, division: Partial<Division>) => Promise<boolean>
@@ -324,6 +327,87 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }
 
+  const reorderMedicines = async (newMedicines: Medicine[]): Promise<boolean> => {
+    try {
+      setMedicines(newMedicines)
+      const res = await fetch('/api/products/reorder', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ medicines: newMedicines }),
+      })
+      if (res.ok) {
+        showToast('Sequence & Divisions Saved', 'Product catalogue sequence and division assignments updated live.', 'success')
+        fetchSnapshot()
+        return true
+      } else {
+        const data = await res.json()
+        showToast('Error Reordering Products', data.error || 'Failed to reorder products', 'error')
+        return false
+      }
+    } catch (err: any) {
+      showToast('Products Reordered', 'Catalogue sequence updated in current session.', 'info')
+      return true
+    }
+  }
+
+  const moveMedicineDivision = async (medicineId: string, targetDivisionId: string): Promise<boolean> => {
+    try {
+      const med = medicines.find(m => m.id === medicineId)
+      if (!med) return false
+      const targetDiv = divisions.find(d => d.id === targetDivisionId)
+      const divName = targetDiv ? targetDiv.name : targetDivisionId
+
+      const updatedMedicines = medicines.map(m => m.id === medicineId ? { ...m, divisionId: targetDivisionId } : m)
+      setMedicines(updatedMedicines)
+
+      const res = await fetch(`/api/products/${encodeURIComponent(medicineId)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ divisionId: targetDivisionId }),
+      })
+      if (res.ok) {
+        showToast('Division Updated', `"${med.name}" moved to ${divName}.`, 'success')
+        fetchSnapshot()
+        return true
+      } else {
+        const data = await res.json()
+        showToast('Error Moving Product', data.error || 'Failed to move product', 'error')
+        return false
+      }
+    } catch (err: any) {
+      showToast('Network Error', err.message, 'error')
+      return false
+    }
+  }
+
+  const batchMoveDivision = async (medicineIds: string[], targetDivisionId: string): Promise<boolean> => {
+    try {
+      const targetDiv = divisions.find(d => d.id === targetDivisionId)
+      const divName = targetDiv ? targetDiv.name : targetDivisionId
+
+      const updatedMedicines = medicines.map(m => medicineIds.includes(m.id) ? { ...m, divisionId: targetDivisionId } : m)
+      setMedicines(updatedMedicines)
+
+      const res = await fetch('/api/products/batch-move', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ medicineIds, targetDivisionId }),
+      })
+      if (res.ok) {
+        showToast('Bulk Transfer Complete', `${medicineIds.length} products moved to ${divName}.`, 'success')
+        fetchSnapshot()
+        return true
+      } else {
+        const data = await res.json()
+        showToast('Error Moving Products', data.error || 'Failed to batch move', 'error')
+        return false
+      }
+    } catch (err: any) {
+      showToast('Network Error', err.message, 'error')
+      return false
+    }
+  }
+
   // ── CRUD: DIVISIONS ───────────────────────────────────────────────────────
   const addDivision = async (division: Omit<Division, 'id'> & { id?: string }): Promise<boolean> => {
     try {
@@ -553,6 +637,9 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     addProduct,
     updateProduct,
     deleteProduct,
+    reorderMedicines,
+    moveMedicineDivision,
+    batchMoveDivision,
     addDivision,
     updateDivision,
     deleteDivision,
