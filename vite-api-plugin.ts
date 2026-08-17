@@ -103,17 +103,31 @@ export function viteApiPlugin(): Plugin {
         }
 
         // SSE Real-Time Stream endpoint
-        if (url === '/api/events' && method === 'GET') {
+        if (url.startsWith('/api/events') && method === 'GET') {
           res.writeHead(200, {
             'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
+            'Cache-Control': 'no-cache, no-transform',
             'Connection': 'keep-alive',
+            'X-Accel-Buffering': 'no',
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
           })
+          if (typeof (res as any).flushHeaders === 'function') {
+            (res as any).flushHeaders()
+          }
           res.write('event: connected\ndata: {"status":"connected"}\n\n')
           sseClients.add(res)
 
+          const keepAliveTimer = setInterval(() => {
+            try {
+              res.write(': keepalive\n\n')
+            } catch {
+              clearInterval(keepAliveTimer)
+            }
+          }, 15000)
+
           req.on('close', () => {
+            clearInterval(keepAliveTimer)
             sseClients.delete(res)
           })
           return

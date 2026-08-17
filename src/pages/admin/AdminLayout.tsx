@@ -28,7 +28,7 @@ const NAV_ITEMS = [
 ]
 
 export default function AdminLayout() {
-  const { isConnected, medicines, inquiries, lastUpdated } = useDataContext()
+  const { isConnected, syncMode, reconnect, medicines, inquiries, lastUpdated } = useDataContext()
   const [mobileOpen, setMobileOpen] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
@@ -51,11 +51,13 @@ export default function AdminLayout() {
       <header className="lg:hidden flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
         <BrandLogo dark size="sm" />
         <div className="flex items-center gap-3">
-          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${
+          <span 
+            onClick={reconnect}
+            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold cursor-pointer ${
             isConnected ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-300'
           }`}>
             <Radio size={10} className={isConnected ? 'animate-pulse text-emerald-400' : ''} />
-            {isConnected ? 'Live' : 'Offline'}
+            {isConnected ? (syncMode === 'sse' ? 'Live SSE' : 'Live Sync') : 'Offline'}
           </span>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -101,18 +103,44 @@ export default function AdminLayout() {
           </div>
 
           {/* Sync Status Banner */}
-          <div className="mx-4 my-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className={`w-2.5 h-2.5 rounded-full ${isConnected ? 'bg-emerald-400 animate-ping' : 'bg-rose-500'}`} />
+          <div 
+            onClick={reconnect}
+            title="Click to manually refresh / sync state"
+            className="mx-4 my-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between cursor-pointer hover:border-slate-700 transition-all"
+          >
+            <div className="flex items-center gap-2.5">
+              <div className={`w-2.5 h-2.5 rounded-full ${
+                isConnected 
+                  ? syncMode === 'sse' 
+                    ? 'bg-emerald-400 animate-pulse' 
+                    : 'bg-cyan-400 animate-pulse'
+                  : 'bg-rose-500'
+              }`} />
               <div className="flex flex-col">
                 <span className="text-[11px] font-bold text-slate-200">
-                  {isConnected ? 'Real-Time Sync Active' : 'Disconnected'}
+                  {isConnected 
+                    ? syncMode === 'sse' 
+                      ? 'Real-Time Sync Active' 
+                      : 'Multi-Tab Sync Active'
+                    : 'Disconnected'}
                 </span>
-                <span className="text-[9px] text-slate-400">Multi-browser live stream</span>
+                <span className="text-[9px] text-slate-400">
+                  {isConnected
+                    ? syncMode === 'sse'
+                      ? 'Multi-browser live stream'
+                      : 'Browser real-time bus'
+                    : 'Click to reconnect'}
+                </span>
               </div>
             </div>
-            <span className="text-[10px] font-mono text-cyan-300 font-semibold px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">
-              SSE
+            <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded border ${
+              isConnected
+                ? syncMode === 'sse'
+                  ? 'bg-emerald-950/60 text-emerald-300 border-emerald-800/50'
+                  : 'bg-cyan-950/60 text-cyan-300 border-cyan-800/50'
+                : 'bg-rose-950/60 text-rose-300 border-rose-800/50'
+            }`}>
+              {isConnected ? (syncMode === 'sse' ? 'SSE' : 'SYNC') : 'OFFLINE'}
             </span>
           </div>
 

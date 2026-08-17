@@ -56,8 +56,10 @@ interface DataContextType {
   inquiries: Inquiry[]
   auditLog: AuditEntry[]
   isConnected: boolean
+  syncMode: 'sse' | 'broadcast' | 'offline'
   isLoading: boolean
   lastUpdated: string | null
+  reconnect: () => void
 
   // Helpers
   getMedicineById: (id: string) => Medicine | undefined
@@ -163,13 +165,15 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [company, setCompany] = useState<CompanyInfo>(defaultCompany)
   const [inquiries, setInquiries] = useState<Inquiry[]>([])
   const [auditLog, setAuditLog] = useState<AuditEntry[]>([])
-  const [isConnected, setIsConnected] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isConnected, setIsConnected] = useState<boolean>(true)
+  const [syncMode, setSyncMode] = useState<'sse' | 'broadcast' | 'offline'>('broadcast')
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [lastUpdated, setLastUpdated] = useState<string | null>(null)
   const [toasts, setToasts] = useState<ToastItem[]>([])
 
-  const showToast = useCallback((title: string, message?: string, type: 'success' | 'info' | 'error' | 'warning' = 'success') => {
-    const id = `toast-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`
+  // Toast Notification Trigger
+  const showToast = useCallback((title: string, message?: string, type: 'success' | 'info' | 'error' | 'warning' = 'info') => {
+    const id = `toast-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`
     setToasts(prev => [...prev.slice(-4), { id, title, message, type }])
     setTimeout(() => {
       setToasts(prev => prev.filter(t => t.id !== id))
@@ -209,47 +213,109 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [applyDbSnapshot])
 
   // Setup SSE Real-time stream + BroadcastChannel for instant multi-tab sync
+  const reconnect = useCallback(() => {
+    fetchSnapshot()
+  }, [fetchSnapshot])
+
   useEffect(() => {
     fetchSnapshot()
 
-    // 1. Local BroadcastChannel
+    // 1. Local BroadcastChannel (Sync across browser tabs instantly)
     let bc: BroadcastChannel | null = null
     try {
       bc = new BroadcastChannel(BROADCAST_CHANNEL_NAME)
       bc.onmessage = (event) => {
         if (event.data?.db) {
           applyDbSnapshot(event.data.db)
+          setIsConnected(true)
         }
       }
     } catch {
       // BroadcastChannel unsupported
     }
 
-    // 2. Server-Sent Events (SSE)
-    let es: EventSource | null = null
-    try {
-      es = new EventSource('/api/events')
-      es.onopen = () => setIsConnected(true)
-      es.onerror = () => setIsConnected(false)
+    // 2. Window focus & storage event fallback
+    const handleFocus = () => {
+      fetchSnapshot()
+    }
+    window.addEventListener('focus', handleFocus)
 
-      es.addEventListener('sync', (event: MessageEvent) => {
-        try {
-          const payload = JSON.parse(event.data)
-          if (payload.db) {
-            applyDbSnapshot(payload.db)
-            if (bc) {
-              bc.postMessage({ db: payload.db })
-            }
-          }
-        } catch (err) {
-          console.error('[DataContext] Error parsing SSE payload:', err)
+    // 3. Server-Sent Events (SSE) with auto-reconnection
+    let es: EventSource | null = null
+    let reconnectTimer: any = null
+    let isDisposed = false
+
+    const connectSSE = () => {
+      if (isDisposed) return
+      try {
+        if (es) {
+          es.close()
         }
-      })
-    } catch (err) {
-      console.warn('[DataContext] SSE connection failed:', err)
+        es = new EventSource('/api/events')
+
+        es.onopen = () => {
+          if (!isDisposed) {
+            setIsConnected(true)
+            setSyncMode('sse')
+          }
+        }
+
+        es.addEventListener('connected', () => {
+          if (!isDisposed) {
+            setIsConnected(true)
+            setSyncMode('sse')
+          }
+        })
+
+        es.addEventListener('sync', (event: MessageEvent) => {
+          if (isDisposed) return
+          try {
+            const payload = JSON.parse(event.data)
+            if (payload.db) {
+              applyDbSnapshot(payload.db)
+              setIsConnected(true)
+              setSyncMode('sse')
+              if (bc) {
+                bc.postMessage({ db: payload.db })
+              }
+            }
+          } catch (err) {
+            console.error('[DataContext] Error parsing SSE payload:', err)
+          }
+        })
+
+        es.onerror = () => {
+          if (isDisposed) return
+          // When SSE stream drops or runs on static hosting, fallback to active browser BroadcastChannel
+          if (typeof window !== 'undefined' && 'BroadcastChannel' in window) {
+            setIsConnected(true)
+            setSyncMode('broadcast')
+          } else {
+            setIsConnected(false)
+            setSyncMode('offline')
+          }
+          if (es) {
+            es.close()
+            es = null
+          }
+          // Schedule background retry
+          clearTimeout(reconnectTimer)
+          reconnectTimer = setTimeout(connectSSE, 8000)
+        }
+      } catch (err) {
+        if (typeof window !== 'undefined' && 'BroadcastChannel' in window) {
+          setIsConnected(true)
+          setSyncMode('broadcast')
+        }
+      }
     }
 
+    connectSSE()
+
     return () => {
+      isDisposed = true
+      clearTimeout(reconnectTimer)
+      window.removeEventListener('focus', handleFocus)
       if (es) es.close()
       if (bc) bc.close()
     }
@@ -629,8 +695,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     inquiries,
     auditLog,
     isConnected,
+    syncMode,
     isLoading,
     lastUpdated,
+    reconnect,
     getMedicineById,
     getMedicinesByDivision,
     getDivisionById,
@@ -660,8 +728,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     inquiries,
     auditLog,
     isConnected,
+    syncMode,
     isLoading,
     lastUpdated,
+    reconnect,
     getMedicineById,
     getMedicinesByDivision,
     getDivisionById,
