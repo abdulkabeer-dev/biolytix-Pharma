@@ -108,7 +108,7 @@ export default function SiteFooter() {
               rel="noopener noreferrer"
               className="text-cyan-400 hover:text-white font-semibold transition-colors"
             >
-              FirstStep Digital Agency
+              FirstStep Digital Marketing Agency
             </a>
           </p>
         </div>
